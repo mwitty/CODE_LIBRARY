@@ -1,0 +1,28 @@
+/*--------------------------------------------------- 
+    
+    inputCTA: 
+
+    Displays an input and a CTA horizontally. Similar
+    to labelCTA, but controls input width and CTA
+    positioning differently.
+
+---------------------------------------------------*/
+@warn inputCTA scss object not being used;
+.inputCTA {
+    position: relative;
+    max-width: 438px;
+    padding-right: 15px;
+}
+
+.inputCTA-input {
+    max-width: 438px;
+}
+
+.inputCTA-cta {
+    padding: 5px 7px;
+    position: absolute;
+    right: -15px;
+    top: 0;
+    cursor: pointer;
+    color: $PINK;
+}

@@ -1,0 +1,32 @@
+/*------------------------------------------------------
+    radioBox:
+
+    Applies layout for a radio input, it's label text,
+    and other text (help text) with side-by-side layout
+
+    <div class="radioBox">
+        <div class="radioBox-input">
+            <input type="radio" />
+        </div>
+        <div class="radioBox-copy">
+            <label>Copy</label>
+            <span class="text text_smallBlock">Helper text</span>
+        </div>
+    </div>
+------------------------------------------------------*/
+
+.radioBox {
+    display: block; // If needed on an inline element
+    position: relative;
+    cursor: pointer;
+}
+
+.radioBox-input {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.radioBox-copy {
+    padding-left: 25px;
+}

@@ -1,0 +1,39 @@
+<!-- #METADATA
+@title Modal
+@type Layout
+@class "modal"
+@description Provides a centered element with a top margin. Includes a layout element to include a closing "x" CTA.
+@note Overlay object is used in conjuction with modal as it's parent element to provide the fixed grayed out container.
+ -->
+
+
+<!-- REFERENCE THIS COMMENTED OUT CODE TO SEE ALL RELEVANT/SURROUNDING MARKUP
+<div class="overlay">
+    <div class="modal">
+        <div class="modal-close">
+            <i class="icn icn_x-altx-alt"></i>
+        </div>
+        <div class="box">
+               <div class="box-hd">
+                   <div class="hdg hdg_4 mix-hdg_fontWeightLT">Some Heading</div>
+               </div>
+               <div class="box-bd">
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Non, iusto. Animi sed quia qui eius hic a itaque possimus sapiente tempora impedit numquam non, pariatur nisi ipsum doloribus, reprehenderit enim.
+               </div>
+        </div>
+    </div>
+</div>
+  -->
+
+<!-- ACTUAL EXAMPLE BEING RENDERED with angular functionality, in this case. -->
+<button data-stingray-modal-control data-show-modal="testModal" class="btn btn_accent mix-btn_conspicuous">Press for modal</button>
+ <div data-stingray-modal modal-id="testModal">
+    <div class="box">
+           <div class="box-hd">
+               <div class="hdg hdg_4 mix-hdg_fontWeightLT">Some Heading</div>
+           </div>
+           <div class="box-bd">
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Non, iusto. Animi sed quia qui eius hic a itaque possimus sapiente tempora impedit numquam non, pariatur nisi ipsum doloribus, reprehenderit enim.
+           </div>
+    </div>
+ </div>

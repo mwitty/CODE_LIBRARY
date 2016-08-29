@@ -1,0 +1,162 @@
+/* ---------------------------------------------------------------------
+ Steps:
+ A horizontal list of numbers, helping the user indicate where they are
+ in a step-by-step process
+
+ README: This module is not mobile friendly with it's static widths (doesn't 
+ flex and bend via percentage widths). To accomodate lists with additional 
+ steps beyond our max, simply increase the $steps-MAX_STEPS variable. This 
+ allows for the background-size (visual connector line) to connect to the 
+ active step item at the proper calculation (line-width). Increasing the 
+ variables will generate the CSS needed for larger lists.
+
+ EXAMPLE MARKUP:
+
+ <ol class="steps steps_3up">
+     <li class="steps-item steps-item_isValid">
+         <div class="steps-item-step">
+             <span class="steps-item-step-content">Step 1</span>
+             <span class="steps-item-step-icn"><i class="icn icn_checkmark"></i></span>
+         </div>
+         <span class="steps-item-copy"> General Info Step</span>
+     </li>
+     <li class="steps-item steps-item_isActive">
+         <div class="steps-item-step">
+             <span class="steps-item-step-content">Step 1</span>
+             <span class="steps-item-step-icn"><i class="icn icn_checkmark"></i></span>
+         </div>
+         <span class="steps-item-copy"> Another Step</span>
+     </li>
+     <li class="steps-item steps-item_isActive">
+         <div class="steps-item-step">
+             <span class="steps-item-step-content">Step 1</span>
+             <span class="steps-item-step-icn"><i class="icn icn_checkmark"></i></span>
+         </div>
+         <span class="steps-item-copy"> Last Step</span>
+     </li>
+ </ol>
+------------------------------------------------------------------------ */
+$steps-SPACER: 80px;
+$steps-item-step-WIDTH_HEIGHT: 60px;
+$steps-item-step-PADDING: 10px;
+$steps-item-step-BORDER_WIDTH: 5px;
+$steps-item-step-CONNECTOR_LINE_HEIGHT: 10px; // The line that visually connects our steps.
+
+$steps-MIN_STEPS: 2; // This minimum never changes. You'll never just have 1 step, by module definition.
+$steps-MAX_STEPS: 4; // INCREASE HERE TO ACCOMODATE FOR MORE STEPS
+
+.steps {
+	font-size: 0;
+	list-style-type: none;
+	list-style-position: inside;
+	text-align: center;
+	color: #ffffff;
+}
+
+.steps > * {
+	position: relative;
+}
+
+.steps > * + * {
+	margin-left: $steps-SPACER;
+}
+
+.steps > *:last-child {
+	padding: 0;
+}
+
+.steps-item {
+	display: inline-block;
+	font-size: $BASE_FONT_SIZE;
+	vertical-align: top;
+	text-align: center;
+}
+
+.steps-item_isValid > .steps-item-step {
+	background-color: $GREEN;
+	border-color: $GREEN;
+}
+
+.steps-item_isActive > .steps-item-step {
+	border-color: $GREEN;
+}
+
+.steps-item-step {
+	height: $steps-item-step-WIDTH_HEIGHT;
+	width: $steps-item-step-WIDTH_HEIGHT;
+	border: $steps-item-step-BORDER_WIDTH solid $GREY_LIGHTER;
+	padding: $steps-item-step-PADDING;
+	font-size: $FONT_SIZE_XXL;
+	line-height: 1;
+	border-radius: 40px;
+	background-color: $GREY;
+	position: relative;
+	box-sizing: border-box;
+
+	& > * {
+		position: absolute;
+		left: 0;
+		right: 0;
+		top: 0;
+		bottom: 0;
+		margin: auto;
+		height: $FONT_SIZE_XXL;
+	}
+}
+
+//Toggling validation icon and step content elements
+.steps-item-step-icn {
+	display: none;
+	.steps-item_isValid & { display: block; }
+}
+
+//Toggling validation icon and step content elements
+.steps-item-step-content {
+	display: block;
+	.steps-item_isValid & { display: none;}
+}
+
+.steps-item-copy {
+	display: block;
+	width: $steps-item-step-WIDTH_HEIGHT;
+	color: $GREY_DARK;
+	font-size: $FONT_SIZE_MD_SM;
+}
+
+// Generating the CSS for lists of varying sizes, driven by our min and max steps variables at the top of this partial.
+@for $i from $steps-MIN_STEPS through $steps-MAX_STEPS {
+  .steps_#{$i}up > *:last-child:after { 
+		content: "";
+		width: ($steps-item-step-WIDTH_HEIGHT + $steps-SPACER) * ($i - 1);
+		height: $steps-item-step-CONNECTOR_LINE_HEIGHT;
+		position: absolute;
+		right: 50%;
+		top: ($steps-item-step-WIDTH_HEIGHT / 2) - ($steps-item-step-CONNECTOR_LINE_HEIGHT / 2);
+		background-image: linear-gradient(to left, $GREEN 0%, $GREEN 100%);
+		background-size: 0% 10px;
+		background-repeat: no-repeat;
+		transition: 1s background-size ease-in-out;
+		z-index: -1;		
+   }
+
+   .steps_#{$i}up > *:last-child:before { // The underlying grey connector bar which will be underneath the progressing green line.
+		content: "";
+		width: ($steps-item-step-WIDTH_HEIGHT + $steps-SPACER) * ($i - 1);
+		height: $steps-item-step-CONNECTOR_LINE_HEIGHT;
+		position: absolute;
+		right: 50%;
+		top: ($steps-item-step-WIDTH_HEIGHT / 2) - ($steps-item-step-CONNECTOR_LINE_HEIGHT / 2);
+		background-image: linear-gradient(to left, #ffffff, $GREY_LIGHT 0%);
+		background-size: 100%;
+		z-index: -2;
+   }
+
+	// Nested loop: Finding the width percentage of a single in-between space for lists of varying number of steps.
+	// Then, we multiply that single percentage amount by the amount of spaces there are between the beginning of the list and the currently active step item.
+	@for $j from $steps-MIN_STEPS through $i {
+		.steps_#{$i}up > *:nth-child(#{$j}).steps-item_isActive ~ .steps-item:last-child:after,
+		.steps_#{$i}up > *:nth-child(#{$j}).steps-item_isActive:after {
+			background-size: (percentage(1 / ($i - 1)) * ($j - 1)) 10px;
+		}
+	}
+}

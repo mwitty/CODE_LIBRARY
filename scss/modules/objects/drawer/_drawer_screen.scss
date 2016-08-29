@@ -1,0 +1,23 @@
+/*--------------------------------------------------- 
+    
+    Drawer:
+    
+    Provides vertical spacing with an hd, bd, and an
+    ft. The ft is text-aligned right by default.
+---------------------------------------------------*/
+
+.drawer-hd > * + * {
+    margin-top: 4px;
+}
+
+.drawer-hd {
+    margin-bottom: 10px;
+}
+
+.drawer-bd {
+    margin-bottom: 22px;
+}
+
+.drawer-ft {
+    text-align: right;
+}

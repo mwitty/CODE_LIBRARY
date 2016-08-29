@@ -1,0 +1,163 @@
+.icn {
+    @include inline-block();
+    vertical-align: middle;
+    font-family: 'optum';
+    speak: none;
+    line-height: 1;
+
+    /* Better Font Rendering =========== */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.icn_save:before {
+    content: $ICN-SAVE;
+}
+
+.icn_search:before {
+    content: $ICN-SEARCH;
+}
+
+.icn_plus:before {
+    content: $ICN-PLUS;
+}
+
+.icn_minus:before {
+    content: $ICN-MINUS;
+}
+
+.icn_x-altx-alt:before {
+    content: $ICN-X_ALTX_ALT;
+}
+
+.icn_x:before {
+    content: $ICN-X;
+}
+
+.icn_exclamation:before {
+    content: $ICN-EXCLAMATION;
+}
+
+.icn_checkmark:before {
+    content: $ICN-CHECKMARK;
+}
+
+.icn_users:before {
+    content: $ICN-USERS;
+}
+
+.icn_cancel-circle:before {
+    content: $ICN-CANCEL_CIRCLE;
+}
+
+.icn_calendar:before {
+    content: $ICN-CALENDAR;
+}
+
+.icn_phone:before {
+    content: $ICN-PHONE;
+}
+
+.icn_settings:before {
+    content: $ICN-SETTINGS;
+}
+
+.icn_print:before {
+    content: $ICN-PRINT;
+}
+
+.icn_evidence:before {
+    content: $ICN-EVIDENCE;
+}
+
+.icn_columns:before {
+    content: $ICN-COLUMNS;
+}
+
+.icn_csv:before {
+    content: $ICN-CSV;
+}
+
+.icn_pdf:before {
+    content: $ICN-PDF;
+}
+
+.icn_xls:before {
+    content: $ICN-XLS;
+}
+
+.icn_flag:before {
+    content: $ICN-FLAG;
+}
+
+.icn_menu:before {
+    content: $ICN-MENU;
+}
+
+.icn_info:before {
+    content: $ICN-INFO;
+}
+
+.icn_pencil:before {
+    content: $ICN-PENCIL;
+}
+
+.icn_spinner:before {
+    content: $ICN-SPINNER;
+}
+
+.icn_link:before {
+    content: $ICN-LINK;
+}
+
+.icn_sort-desc:before {
+    content: $ICN-SORT_DESC;
+}
+
+.icn_sort-asc:before {
+    content: $ICN-SORT_ASC;
+}
+
+.icn_angle-left:before {
+    content: $ICN-ANGLE_LEFT;
+}
+
+.icn_angle-right:before {
+    content: $ICN-ANGLE_RIGHT;
+}
+
+.icn_angle-up:before {
+    content: $ICN-ANGLE_UP;
+}
+
+.icn_angle-down:before {
+    content: $ICN-ANGLE_DOWN;
+}
+
+.icn_database:before {
+    content: $ICN-DATABASE;
+}
+
+.icn_check:before {
+    content: $ICN-CHECK;
+}
+
+.icn_attestation:before {
+    content: $ICN-ATTESTATION;
+}
+
+.icn_upload:before {
+    content: $ICN-UPLOAD;
+}
+
+.icn_stats-bars:before {
+    content: $ICN-STATS_BARS;
+}
+
+.icn_meter:before {
+    content: $ICN-METER;
+}
+
+.icn_bin:before {
+    content: $ICN-BIN;
+}

@@ -1,0 +1,113 @@
+/*--------------------------------------------------------------------
+    Cell:
+
+    Adds one or more layers to table cells that need it, 
+    particularly for controlling the styles of one 
+    or more CTA's (i.e. color, layout, and  positioning).
+    ---------------SAMPLE MARKUP---------------
+    EXAMPLE 1
+    <div class="cell">
+        COPY, TEXT, CONTENT
+        <div class="cell-cta">
+            <i class="icn icn_closing-x"></i>
+        </div>
+    </div>
+    ------------------------------------------
+    EXAMPLE 2
+    <div class="cell cell_neutralPaddedCTA">
+        <a class="cell-cta">
+            <i class="icn icn_pencil"></i>
+        </a>
+        <a class="cell-cta">
+            <i class="icn icn_bin"></i>
+        </a>
+    </div>
+---------------------------------------------------------------------*/
+
+// Varibles
+$cell-ICN_FILTER_HEIGHT: 12px;
+$cell-HEIGHT: 38px;
+$cell-ICN_STATUS_HEIGHT: 25px;
+
+.cell {
+    position: relative;
+    padding: 2px 10px 2px 10px;
+}
+
+.cell_stripped {
+   padding: 0;
+}
+
+.cell_status {
+    padding: 2px 25px 2px 0; 
+}
+
+.cell_basic {
+    padding: 5px;
+    cursor: pointer;
+}
+
+.cell_status > .cell-cta {
+    padding: 3px 2px; // Increase clickable area. Top and bottom padding is accounted for in calculating height in $cell-ICN_STATUS_HEIGHT.
+    position: absolute;
+    top: 0;
+    right: 0;
+    font-size: $FONT_SIZE_MEDIUM;
+    color: $GREY_DARK_LIGHT;
+
+    // Brower Hack: Overrides everything but Internet Explorer ≤8
+    :root & { top: calc(50% - #{$cell-ICN_STATUS_HEIGHT / 2});} // Providing more precise calculation of icon position for modern browsers
+
+}
+
+/* CELL_neutralPaddedCTA CONTROLS THE LAYOUT AND COLOR OF SIDE-BY-SIDE OR SOLO CTA's.*/
+.cell_neutralPaddedCTA > * {
+    padding: 5px 5px; // Increasing clickable area, and padding also naturally separates both CTA's.
+    color: $GREY_DARK_LIGHT;
+    font-size: $FONT_SIZE_MEDIUM;
+    
+    // ACTIVE HOVER
+    &:hover { color: $GREY_MEDIUM; }
+    &:active { color: $GREY_DARK; }
+
+}
+
+/* .CELL_FILTER SPECIFICALLY CONTROLS THE LAYOUT OF 2 STACKED ICON OBJECTS THAT INDICATE FILTER STATUS (ascending, descending) */
+.cell_filter,
+.cell_padRight {
+    padding: 2px 25px 2px 10px;
+}
+
+.cell_filter > * {
+    height: $cell-ICN_FILTER_HEIGHT;
+    position: absolute;
+    right: 12px;
+    top: percentage($cell-ICN_FILTER_HEIGHT / $cell-HEIGHT);
+    font-size: $FONT_SIZE_XXSMALL;
+    color: $GREY_DARK_LIGHT;
+
+    // Brower Hack: Everything but Internet Explorer ≤8
+    :root & { top: calc(50% - #{$cell-ICN_FILTER_HEIGHT / 2});} // More precise calculation of icon position for modern browsers
+
+}
+
+.cell_filter > * > .icn_sort-asc {
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+.cell_filter > * > .icn_sort-desc {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+} // END .CELL_FILTER EXTENSION
+
+.cell-cta {
+    cursor: pointer;
+}
+
+/* MIXINS */
+.mix-cell_conspicuous .cell-icn > * {
+    color: $PINK;
+}

@@ -1,0 +1,145 @@
+/*------------------------------------------------------ 
+    
+    Input Styles
+    
+    The input object is an extension based class that 
+    styles browse, text, search, and number inputs, but
+    also styles select elements.
+
+    NOTE: This partial is seemingly complex, but it's
+    documented well. Be sure to review comments before 
+    making changes. Browser hacks enable cross browser
+    support for style uniformity among minor stylings.
+------------------------------------------------------*/
+
+// Local variables
+$input-COMMON_BORDER_RADIUS: 2px;
+$input-COMMON_BORDER: 1px solid $GREY_LIGHT;
+$input-COMMON_PADDING: 6px;
+
+// Local Mixin
+@mixin focus-border-color() { 
+    &:focus { border-color: $GREY_DARK_LIGHT; }
+}
+
+.input {
+    width: 100%;
+    font-size: $DEFAULT_FONT_SIZE;
+    background: $NEARWHITE;
+    @include box-sizing(border-box);
+    @include focus-outline-width(0,0); // Hides native :focus outline.
+    vertical-align: middle;
+}
+
+// File upload input.
+.input_browse {
+    @include box-shadow(0px 2px 1px -1px $GREY_LIGHT);
+    padding: 2px;
+    cursor: pointer;
+    border: $input-COMMON_BORDER;
+    @include border-radius($input-COMMON_BORDER_RADIUS);
+    @include focus-border-color(); // Focus state border color change. See local mixin.
+    
+    // BROWSERHACK: ( ≥ IE10 ):
+    _:-ms-input-placeholder, :root & { // Hiding border and box-shadow for latest IE since we're using IE's native styles rather than customizing.
+        border-width: 0px;
+        box-shadow: none;
+    }
+
+}
+
+.input_number, .input_text, .input_textarea { // Opting not to consolidate to one class.
+    @include appearance(none);
+    @include border-radius($input-COMMON_BORDER_RADIUS);
+    @include box-shadow(0px 2px 1px -1px $GREY_LIGHT);
+    @include focus-border-color(); // Focus state border color change. See local mixin.
+    border: $input-COMMON_BORDER;
+    padding: $input-COMMON_PADDING;
+    
+}
+
+.input_select {
+    @include appearance(none);
+    @include border-radius($input-COMMON_BORDER_RADIUS);
+    @include box-shadow(0px 2px 1px -1px $GREY_LIGHT);
+    @include focus-border-color(); // Focus state border color change. See local mixin.
+    width: 100%;
+    border: $input-COMMON_BORDER;
+    padding: 6px 20px 6px 6px; // The right padding established here only affects IE9 or less. A BROWSERHACK rewrites modern browser's right padding below.
+    background: url("../media/images/select-arrow.png") no-repeat 95% 13px, linear-gradient(#f9f9f9, #fdfdfd);
+    font-size: $FONT_SIZE_SMALL;
+    text-indent: 0.01px;
+    text-overflow: '';
+    
+    // BROWSERHACK: ( ≥ IE10 ): Removes background image on IE10 or greater due to fuzzy rendering. Uses default look instead.
+    _:-ms-input-placeholder, :root & {
+        padding-right: 6px;
+        background-image: linear-gradient(#f9f9f9, #fdfdfd); // Establishing background gradient and thus excluding the down-arrow bg-image.
+        background-position-y: 0; // linear gradients are affected by background position in IE. This places it correctly.
+    }
+
+    // BROWSERHACK: ( ≥ IE10 ): Modifying styles of IE's native select dropdown arrow, thus mimicking the bg-image without using it.
+    _:-ms-input-placeholder, :root &::-ms-expand {
+        display: block;
+        border: 0;
+        background: transparent;
+    }
+
+}
+
+// Used on smaller select inputs in order that the background-image arrow, which has to be a set width and height, fits proportionally for small inputs.
+.mix-input_select_sm { background-position: 85% 13px; }
+
+// Used on longer select inputs in order that the background-image arrow, which has to be a set width and height, fits proportionally for longer inputs.
+.mix-input_select_long { background-position: 97% 13px; }
+
+.input_select_isDisabled { // Select inputs need their specific disabled styles to preserve dropdown arrow.
+     background: $GREY_LIGHTER url("../media/images/select-arrow-disabled.png") no-repeat 95% 13px;
+     color: $GREY_MEDIUM;
+
+     // BROSWERHACK: (IE10 ≥): Removes backround-image gradient for disabled select elements
+     _:-ms-input-placeholder, :root & {
+         background-image: none; // Establishing gradient without the url value.
+     }
+      
+}
+
+.input_search {
+    padding: 6px 10% 6px 6px; // 10% scalable right padding to separate from search icon. 
+    border: 1px solid $GREY_LIGHTER;
+    @include appearance(none);
+    @include border-radius(3px);
+    @include box-sizing(border-box);
+    @include focus-border-color(); // Focus state border color change. See local mixin.
+}
+
+.mix-input_prominent {
+    border: 1px solid $GREY_MEDIUM; // Darker border color, relative to $GREY_LIGHTER.
+    padding-top: 9px; // More vertical padding making it taller.
+    padding-bottom: 9px; // More vertical padding making it taller.
+}
+
+/* Mixins */
+.mix-input_outline { // A darker border color than the default.
+    border-color: $GREY_MEDIUM;
+}
+
+// General disabled class is a mixin class.
+.mix-input_isDisabled {
+    padding: $input-COMMON_PADDING;
+    background: $GREY_LIGHTER;
+    pointer-events: none;
+    color: $GREY_MEDIUM;
+}
+
+// InputErrorWrap: An error state class that wraps the input object, as opposed to directly on the object, due to angular architecture.
+.inputErrorWrap > * {
+    border-color: $PINK;
+    
+    // Preserve border-color when focused on an input with an error state.
+    &:focus { 
+        border-color: $PINK;
+        border-style: dotted; // This change of style allows a visible and subtle change so the users knows their in focus.
+    }
+    
+}

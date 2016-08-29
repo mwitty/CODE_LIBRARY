@@ -1,0 +1,14 @@
+/*--------------------------------------------------- 
+    Sidebar:
+
+    A padded container with a background color and
+    min-height. Named for it's resemblence, not 
+    it's contextual usage.
+    
+---------------------------------------------------*/
+
+.sidebar {
+    padding: 30px 20px;
+    min-height: 360px;
+    background: $GREY_LIGHTEST;
+}

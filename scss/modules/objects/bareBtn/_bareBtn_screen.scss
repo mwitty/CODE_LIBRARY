@@ -1,0 +1,22 @@
+/*--------------------------------------------------- 
+    
+    Bare Button styles
+    
+    This object is for buttons that have no button 
+    styles. Possible use case: a button used for it's 
+    native focus state ability. Buttons respond to
+    spacebar and enter keys for keyboard navigation.
+-----------------------------------------------------*/
+
+.bareBtn {
+    @include appearance(none);
+    border: none;
+    padding: 0;
+    background: none;
+    font-size: inherit;
+    color: inherit;
+}
+
+.bareBtn_indicate { // When the element expects cursor behavior 
+    cursor: pointer;
+}

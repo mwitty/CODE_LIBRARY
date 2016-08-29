@@ -1,0 +1,40 @@
+/*--------------------------------------------------- 
+    Prompt
+
+    Controls container padding and vertical spacing.
+    Similar to box, but opted for new object if more
+    variation is needed in the future.
+---------------------------------------------------*/
+$prompt-WIDTH: 604px;
+$prompt-SIDE_PADDING: 30px;
+
+//Caluculated Side Padding
+$prompt-SIDE_PADDING_PERCENTAGE: percentage($prompt-SIDE_PADDING / $prompt-WIDTH);
+
+.prompt {
+    background: $GREY_LIGHTER;
+    padding: 30px $prompt-SIDE_PADDING_PERCENTAGE 30px;
+    @include border-radius(5px);
+}
+
+.prompt-hd {
+    margin-bottom: 40px;
+    text-align: center;
+}
+
+.prompt-hd > * + * {
+    margin-top: 20px;
+}
+
+.prompt-hd-media {
+    margin: 0 auto;
+    max-width: 300px; @warn gets switched to 240px once out of Beta and using different logo;//TODO
+}
+
+.prompt-hd-media > * {
+    width: 100%;
+}
+
+.prompt_shorten > .prompt-hd {
+    margin-bottom: 20px;
+}

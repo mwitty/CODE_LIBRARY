@@ -1,0 +1,89 @@
+<!-- #METADATA
+@title Cell
+@type Module / Object
+@class "cell"
+@description Adds one or more layers to table cells that need it, particularly for controlling the styles of one or more CTA's (i.e. color, layout, and  positioning). Simply extend this class when you need a specific table cell layout.
+@note The ".cell_filter" uses and styles specific icons (.icn_sort-asc, .icn_sort-desc). The cell object does not get background color, but rather that needs to be on the table object in order that it covers the entirety of the table-cell.
+ -->
+ <div class="vr">
+     <div class="hdg hdg3 mix-hdg_dark"></div>
+ </div>
+<div class="styleguide-cellDisplay">
+    <div class="tableOverflow">
+        <table class="table">
+            <thead class="table-head">
+                <tr class="table-head-row">
+                    <th title=".cell_filter" class="table-head-row-cell">
+                        <div class="cell cell_filter">
+                            cell_filter
+                            <div class="cell-cta"><i class="icn icn_sort-asc"></i><i class="icn icn_sort-desc"></i></div>
+                        </div>
+                    </th>
+                    <th title=".cell_filter" class="table-head-row-cell">
+                        <div class="cell cell_filter">
+                            cell_filter
+                            <div class="cell-cta"><i class="icn icn_sort-asc"></i><i class="icn icn_sort-desc"></i></div>
+                        </div>
+                    </th>
+                    <th title=".cell_filter" class="table-head-row-cell">
+                        <div class="cell cell_filter">
+                            cell_filter
+                            <div class="cell-cta"><i class="icn icn_sort-asc"></i><i class="icn icn_sort-desc"></i></div>
+                        </div>
+                    </th>
+                </tr>
+            </thead>
+            <tbody class="table-body">
+                <tr class="table-body-row">
+                    <td title=".cell_neutralPaddedCTA" class="table-body-row-cell table-body-row-cell_narrow">
+                        <div class="cell cell_neutralPaddedCTA">
+                            <a class="cell-cta" href=""><i class="icn icn_pencil"></i></a>
+                            <a class="cell-cta" href=""><i class="icn icn_bin"></i></a>
+                        </div>
+                    </td>
+                    <td title="This table cell does not contain an example cell object"><span class="styleguide-arrowLeft">&larr;</span> cell_neutralPaddedCTA</td>
+                    <td title=".cell_status" class="table-body-row-cell table-body-row-cell_success">
+                        <div class="cell cell_status">
+                            cell_status
+                        </div>
+                    </td>
+                </tr>
+                <tr class="table-body-row">
+                    <td title=".cell_neutralPaddedCTA" class="table-body-row-cell table-body-row-cell_narrow">
+                        <div class="cell cell_neutralPaddedCTA">
+                            <a class="cell-cta" href=""><i class="icn icn_pencil"></i></a>
+                            <a class="cell-cta" href=""><i class="icn icn_bin"></i></a>
+                        </div>
+                    </td>
+                    <td title="This table cell does not contain an example cell object"><span class="styleguide-arrowLeft">&larr;</span> cell_neutralPaddedCTA</td>
+                    <td title=".cell_status" class="table-body-row-cell table-body-row-cell_validationError">
+                        <div class="cell cell_status">
+                            cell_status
+                            <div class="cell-cta">
+                                <i class="icn icn_search"></i>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+                <tr class="table-body-row">
+                    <td title=".cell_neutralPaddedCTA" class="table-body-row-cell table-body-row-cell_narrow">
+                        <div class="cell cell_neutralPaddedCTA">
+                            <a class="cell-cta" href=""><i class="icn icn_pencil"></i></a>
+                            <a class="cell-cta" href=""><i class="icn icn_bin"></i></a>
+                        </div>
+                    </td>
+                    <td title="This table cell does not contain an example cell object"><span class="styleguide-arrowLeft">&larr;</span> cell_neutralPaddedCTA</td>
+                    <td title=".cell_status" class="table-body-row-cell table-body-row-cell_processError">
+                        <div class="cell cell_status">
+                            cell_status
+                            <div class="cell-cta">
+                                <i class="icn icn_cancel-circle"></i>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+                
+            </tbody>
+        </table>
+    </div>
+</div>

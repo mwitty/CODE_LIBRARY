@@ -1,0 +1,50 @@
+/*--------------------------------------------------- 
+    
+    FormItemCombo:
+
+    A layout object that lays out a form object
+    with a checkbox at the end of the same line
+    (a checkbox being one use case).
+
+    ------Sample Markup ------------
+
+    <ul class="formItemCombo">
+        <li>
+            <input type="text">
+        </li>
+        <li>
+            <label class="checkbox">
+                <input type="checkbox" />
+                <span class="checkbox-text">
+                    Text goes here
+                </span>
+            </label>
+        </li>
+    </ul>
+
+    --------------------------------
+
+---------------------------------------------------*/
+
+.formItemCombo {
+    width: 100%;
+    font-size: 0;
+}
+
+.formItemCombo > * {
+    @include inline-block();
+    width: 40%;
+    font-size: $DEFAULT_FONT_SIZE;
+}
+
+.formItemCombo > * + * {
+    width: 60%;
+}
+
+.formItemCombo_alt1 > * {
+    width: 66.6666%;
+}
+
+.formItemCombo_alt1 > * + * {
+    width: 33.3333%;
+}

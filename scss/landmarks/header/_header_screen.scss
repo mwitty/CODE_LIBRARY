@@ -1,0 +1,19 @@
+/*--------------------------------------------------- 
+    Header:
+
+    Major landmark layout object. Provides layout.
+---------------------------------------------------*/
+
+.header {
+    padding: 16px 0;
+    @include micro-clearfix();
+}
+
+.header-sect_primary { // Styles first header section
+    float: left;
+}
+
+.header-sect_secondary { // Styles second header section
+    position: relative;
+    float: right;
+}

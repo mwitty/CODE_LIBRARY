@@ -1,0 +1,14 @@
+/* -----------------------------------------------------
+Utils
+
+Utility classes have the "u-" in all cases and aim to only
+deal with one property.
+-------------------------------------------------------*/
+
+.u-isHidden { display: none !important; }
+
+.u-alignRight { text-align: right; }
+
+.u-inheritColor { color: inherit; }
+
+.u-position { position: relative; }

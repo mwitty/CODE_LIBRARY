@@ -1,0 +1,43 @@
+/*--------------------------------------------------- 
+    hTabs:
+
+    A horizontal tabbed navigation UI:
+
+---------------------------------------------------*/
+
+.hTabs {}
+
+.hTabs-list {
+    border-bottom: 4px solid $ORANGE_LIGHT;
+    font-size: 0;
+}
+
+.hTabs-list > * {
+    @include inline-block();
+    border-top: 1px solid $GREY_LIGHTER;
+    border-right: 1px solid $GREY_LIGHTER;
+    font-size: $DEFAULT_FONT_SIZE;
+}
+
+.hTabs-list-item:first-child {
+    border-left: 1px solid $GREY_LIGHTER;
+}
+
+.hTabs-list > * > * {
+    display: block;
+    padding: 12px 14px 11px;
+    font-weight: bold;
+    color: $GREY_DARK;
+    cursor: pointer;
+}
+
+.hTabs-list-item_isActive,
+.hTabs-list-item_isActive:first-child { //:first-child must be specified for it to get proper border-left active color.
+    border-color: $ORANGE_LIGHT;
+    background: $ORANGE_LIGHT;
+}
+
+.hTabs-list-item_isActive > * {
+    color: $WHITE;
+    cursor: default;
+}

@@ -1,0 +1,106 @@
+/*--------------------------------------------------- 
+    
+    Button styles
+
+---------------------------------------------------*/
+
+.btn {
+    @include inline-block();
+    border: 0;
+    padding: 10px 18px; 
+    text-align: center;
+    font-size: $FONT_SIZE_SMALL;
+    cursor: pointer;
+    @include border-radius(2px);
+    @include appearance(none);
+}
+
+.btn_accent {
+    background: $ORANGE_MED_DARK;
+    color: $WHITE;
+}
+
+.btn_accent:hover {
+    background: $ORANGE;
+}
+
+.btn_accent:active {
+    background: $ORANGE_DARK;
+}
+
+.btn_neutral {
+    color:$WHITE;
+    background: $GREY_DARK_LIGHT;
+}
+
+.btn_neutral:hover {
+    background: $GREY_MEDIUM;
+}
+
+.btn_neutral:active {
+    background: $GREY_DARK;
+}
+
+.btn_stripped {
+    padding: 10px 8px;
+    background: none;
+    color: $GREY_DARK;
+}
+
+.btn_icnAccentLg {
+    padding: 12px 16px;
+    font-size: $FONT_SIZE_MEDIUM;
+    color: $WHITE;
+    background: $ORANGE_MED_DARK;
+}
+
+.btn_icnAccentLg:hover {
+    background: $ORANGE;
+}
+
+.btn_icnAccentLg:active {
+    background: $ORANGE_DARK;
+}
+
+// Styles a nested icon to be aligned and spaced properly
+.btn_icnAccentLg > .icn { 
+    vertical-align: middle;
+    margin-right: 7px; // Assuming the icon is left of the button text.
+    
+    // BROWSER HACK (everything except ≤ IE8 and Firefox)
+    _::selection, &:not([attr*='']) { vertical-align: text-top; }
+    
+}
+
+.mix-btn_conspicuous {
+    font-size: $FONT_SIZE_MEDIUM;
+    padding: 12px 16px;
+}
+
+/* Disabled class with IE8 proofing. :hover and :active ensure IE8 stays disabled. Disabled attribute is wonky for IE8 */
+.mix-btn_isDisabled,
+.mix-btn_isDisabled:hover,
+.mix-btn_isDisabled:active,
+.mix-btn_isDisabled:focus {
+    border: 1px solid $GREY_LIGHT;
+    color: $GREY_MEDIUM;
+    background: $GREY_LIGHTEST;
+    cursor: default;
+    outline-width: 0;
+    pointer-events: none; // Will not effect IE10 or less.
+}
+
+.mix-btn_minWidth {
+    min-width: 90px;
+}
+
+.mix-btn_fauxBrowseBtn {
+    pointer-events: none;
+    position: absolute;
+    left: 2px;
+    top: 2px;
+}
+
+.mix-btn_expand {
+    width: 100%; // When width is controlled by parent layout container.
+}

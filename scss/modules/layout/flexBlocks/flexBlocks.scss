@@ -1,0 +1,26 @@
+/*---------------------------------*
+
+FlexBlocks
+=====
+
+----------------------------------*/
+
+.flexBlocks {
+    display: flex;
+    align-items: stretch;
+    margin: -2rem 0 0 -2rem;
+    flex-wrap: wrap;
+}
+
+.flexBlocks > * {
+    margin: 2rem 0 0 2rem;
+    width: calc(100% - 2rem);
+}
+
+.flexBlocks_2up > * {
+    width: calc(50% - 2rem);
+}
+
+.flexBlocks_3up > * {
+    width: calc(33.3333% - 2rem);
+}

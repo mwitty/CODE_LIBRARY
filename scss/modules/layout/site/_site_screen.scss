@@ -1,0 +1,33 @@
+/*------------------------------------------------------------
+    Site:
+
+    Controls major site layout for sticky footer control via the
+    display: table; method. html and body element get 100% height
+    in _elements.scss partial.
+-------------------------------------------------------------*/
+
+.site {
+    display: table;
+    width: 100%;
+    height: 100%;
+}
+
+.site-hd {
+    display: table-row;
+    height: 1px;
+}
+
+.site-bd {
+    display: table-row;
+    height: auto;
+    overflow: hidden;
+}
+
+.site-bd-item {
+    display: table-cell;
+}
+
+.site-ft {
+    display: table-row;
+    height: 1px;
+}

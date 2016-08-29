@@ -1,0 +1,52 @@
+/*--------------------------------------------------- 
+    Label CTA:
+
+    A copy container with a clickable element positioned 
+    to the right.
+
+    //EXAMPLE MARKUP
+    
+    <div class="labelCTA">
+        <div class="labelCTA-innerBlock">
+            //text or block element
+        </div>
+        <div class="labelCTA-cta">
+            <i class="icn icn_x"></i>
+        </div>
+    </div>
+---------------------------------------------------*/
+
+// Variables
+$labelCTA-HEIGHT: $FONT_SIZE_SMALL;
+$labelCTA-CTA_WIDTH: $FONT_SIZE_SMALL; // We can assign it the same value as height because we assume it's a square shape.
+$labelCTA-CTA-SIDE_PADDING: 10px;
+
+.labelCTA {
+    padding-right: $labelCTA-CTA_WIDTH + ($labelCTA-CTA_SIDE_PADDING * 2); // prevents overlap with .labelCTA-cta in the small chance that the users screen is very small.
+    position: relative;
+    font-size: $FONT_SIZE_SMALL;
+    color: $GREY_DARK;
+}
+
+.labelCTA-innerBlock {
+    @include inline-block();
+    padding-right: 5px;
+}
+
+.labelCTA-cta {
+    padding: 0px $labelCTA-CTA_SIDE_PADDING 0 $labelCTA-CTA_SIDE_PADDING; // Increasing clickable area.
+    position: absolute;
+    right: 0px;
+    top: 0px;
+    color: $PINK;
+    cursor: pointer;
+    
+    // BROWSER HACK (Everything but IE8)
+    :root & { top: calc(50% - (#{$labelCTA-HEIGHT}) / 2);} //smart positioning for modern browsers
+
+}
+
+//BROWSER HACK (Everything but IE8)
+:root .labelCTA-cta .icn {
+    vertical-align: top; // Irons out minor positioning discrepancies across modern browsers.
+}

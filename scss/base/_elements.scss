@@ -1,0 +1,11 @@
+html {
+    height: 100%; // For sticky footer via display table method. See _site_screen.scss.
+}
+
+body {
+    height: 100%; // For sticky footer via display table method. See _site_screen.scss.
+    font-family: $FONT_FAMILY_STD;
+    font-size: $DEFAULT_FONT_SIZE;
+    line-height: $DEFAULT_LINE_HEIGHT;
+    background: $OFFWHITE;
+}

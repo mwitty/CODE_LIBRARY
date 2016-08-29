@@ -1,0 +1,34 @@
+/*--------------------------------------------------- 
+    Box:
+
+    A padded container with rounded corners. 
+    It has a .box-hd, a .box-bd, bg-color and 
+    box-shadow.
+    
+    <div class="box">
+        <div class="box-hd">
+        
+        </div>
+        <div class="box-bd">
+            
+        </div>
+    </div>
+---------------------------------------------------*/
+
+.box {
+    padding: 32px;
+    min-height: auto;
+    background: $OFFWHITE;
+    @include border-radius(5px);
+    overflow-y: auto;
+    @include box-shadow(0 0 10px $OFFBLACK);
+}
+
+.box-hd {
+    margin-bottom: 12px;
+    padding: 0 0 0 0;
+}
+
+.box-bd {
+    padding: 10px 0 20px 0;
+}

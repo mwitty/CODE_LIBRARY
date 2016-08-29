@@ -1,0 +1,31 @@
+/*--------------------------------------------------- 
+    Pagination:
+
+    Basic horizontal list paging object.
+---------------------------------------------------*/
+
+.pagination {
+    font-size: 0;
+}
+
+.pagination > * {
+    @include inline-block();
+    font-size: $DEFAULT_FONT_SIZE;
+}
+
+.pagination > * + * {
+    padding-left: 9px;
+}
+
+.pagination > * > * {
+    display: block; // Increasing clickable area
+    cursor: pointer;
+    color: $ORANGE_MED_DARK;
+}
+
+.pagination-current {
+    font-weight: bold;
+    
+    // Turns off pointer for the current page link since the users is there already.
+    & > * { cursor: default; }
+}

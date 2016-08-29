@@ -1,0 +1,31 @@
+<!-- #METADATA
+@title Site
+@type Layout
+@class "site"
+@description Provides major site layout, but particularly for using display: table; method for a sticky footer.
+@note Artificially applying inline styles to mimic required styling that the body and html tags would have, as well as drawing out a fake browser window.
+ -->
+<span>Outer box is fake browser window</span>
+<div style="height: 300px;border: 2px solid #000000; padding: 15px; overflow-y: auto;"><!-- Adding artificial height and overflow as if this is the browser window -->
+    <div style="height: 100%;"><!-- Acts like body and html tag, both of which get height: 100%; if site-ft is to stick to bottom -->
+        <div class="site">
+            <div class="site-hd">
+                <div class="styleguide-exampleBlock">
+                    Site-hd:header stuff goes here.
+                </div>
+            </div>
+            <div class="site-bd">
+                <div class="site-bd-item">
+                    <div class="styleguide-exampleBlock">
+                        Site-bd: Main content stuff goes here.
+                    </div>
+                </div>
+            </div>
+            <div class="site-ft">
+                <div class="styleguide-exampleBlock">
+                    Site-ft: footer sticks.
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

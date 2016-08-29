@@ -1,0 +1,51 @@
+/* ---------------------------------------------------------------------
+ Sector:
+ An object with horizontally displayed sections (divided with borders), 
+ and vertically seperated sections (also divided by borders). Each section
+ has the same amount of padding. Sections within the first and last columns
+ are flush agains the edge.
+
+ CODE EXAMPLE
+
+ <div class="sector sector_2up">
+ 	<div class="sector-item">
+ 		<div class="sector-item-section"></div>
+ 		<div class="sector-item-section"></div>
+ 	</div>
+ 	<div class="sector-item">
+ 		<div class="sector-item-section"></div>
+ 		<div class="sector-item-section"></div>
+ 	</div>
+ </div>
+------------------------------------------------------------------------ */
+
+$sector-SPACER: 20px;
+
+.sector {
+	display: flex;
+}
+
+.sector_2up > * {
+	width: 50%;
+	box-sizing: border-box;
+}
+
+.sector > * + * {
+	border-left: 1px solid $GREY;
+}
+
+.sector-item > * + * {
+	border-top: 1px solid $GREY;
+}
+
+.sector-item-section {
+	padding: $sector-SPACER;
+}
+
+.sector-item:first-child > * {
+	padding: $sector-SPACER $sector-SPACER $sector-SPACER 0; // Sections in first column/item have no left padding
+}
+
+.sector-item:last-child > * {
+	padding: $sector-SPACER 0 $sector-SPACER $sector-SPACER; // Sections in last column/item have no right padding
+}

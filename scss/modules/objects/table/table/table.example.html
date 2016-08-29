@@ -1,0 +1,69 @@
+<!-- #METADATA
+@title Table
+@type Module / Object
+@class "table, tableOverflow"
+@description This is the main table object for displaying tabular data.
+@note The "cell" and "table" objects are dependent on each other. The Table object uses "cell_filter" for the <th> elements. Table cell class extensions may provide background color or a width for the "cell" object.
+ -->
+<div class="tableOverflow">
+    <table class="table">
+        <thead class="table-head">
+            <tr class="table-head-row">
+                <th class="table-head-row-cell">
+                    <div class="cell cell_filter">
+                        Full Name
+                        <div class="cell-cta"><i class="icn icn_sort-asc"></i><i class="icn icn_sort-desc"></i></div>
+                    </div>
+                </th>
+                <th class="table-head-row-cell">
+                    <div class="cell cell_filter">
+                        Email
+                        <div class="cell-cta"><i class="icn icn_sort-asc"></i><i class="icn icn_sort-desc"></i></div>
+                    </div>
+                </th>
+                <th class="table-head-row-cell">
+                    <div class="cell cell_filter">
+                        Practice Group
+                        <div class="cell-cta"><i class="icn icn_sort-asc"></i><i class="icn icn_sort-desc"></i></div>
+                    </div>
+                </th>
+                <th class="table-head-row-cell">
+                    <div class="cell cell_filter">
+                        User Type
+                        <div class="cell-cta"><i class="icn icn_sort-asc"></i><i class="icn icn_sort-desc"></i></div>
+                    </div>
+                </th>
+                <th class="table-head-row-cell">
+                    <div class="cell cell_filter">
+                        Account Status
+                        <div class="cell-cta"><i class="icn icn_sort-asc"></i><i class="icn icn_sort-desc"></i></div>
+                    </div>
+                </th>
+                <th class="table-head-row-cell">
+                    <div class="cell cell_filter">
+                        Last Login
+                        <div class="cell-cta"><i class="icn icn_sort-asc"></i><i class="icn icn_sort-desc"></i></div>
+                    </div>
+                </th>
+            </tr>
+        </thead>
+        <tbody class="table-body">
+            <tr class="table-body-row">
+                <td class="table-body-row-cell" title="Title attribute is intended to show each cell's data on hover"><a class="table-body-row-cell-link" href="">User</a></td>
+                <td class="table-body-row-cell" title="Title attribute is intended to show each cell's data on hover">Data@coord.com</td>
+                <td class="table-body-row-cell" title="Title attribute is intended to show each cell's data on hover">Test Provider</td>
+                <td class="table-body-row-cell" title="Title attribute is intended to show each cell's data on hover">DATA_COORDINATOR</td>
+                <td class="table-body-row-cell" title="Title attribute is intended to show each cell's data on hover">ACTIVE</td>
+                <td class="table-body-row-cell" title="Title attribute is intended to show each cell's data on hover">Wed Apr 15 2015</td>
+            </tr>
+            <tr class="table-body-row">
+                <td class="table-body-row-cell" title="Title attribute is intended to show each cell's data on hover"><a class="table-body-row-cell-link" href="">Administrator</a></td>
+                <td class="table-body-row-cell" title="Title attribute is intended to show each cell's data on hover">email@test.com</td>
+                <td class="table-body-row-cell" title="Title attribute is intended to show each cell's data on hover">Test Provider</td>
+                <td class="table-body-row-cell" title="Title attribute is intended to show each cell's data on hover">ADMINISTRATOR</td>
+                <td class="table-body-row-cell" title="Title attribute is intended to show each cell's data on hover">ACTIVE</td>
+                <td class="table-body-row-cell" title="Title attribute is intended to show each cell's data on hover">Tues Apr 15, 2015</td>
+            </tr>
+        </tbody>
+    </table>
+</div>

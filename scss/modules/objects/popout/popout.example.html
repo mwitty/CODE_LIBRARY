@@ -1,0 +1,92 @@
+<!-- #METADATA
+@title Popout
+@type Module / Object
+@class "popout"
+@description An object with a trigger and a container. The containers visibility is toggled upon applied active class.
+@note Anything can be placed inside "popout-container" to have it's visibility toggled.
+ -->
+<div class="split">
+    <div class="split-left">
+        <div class="styleguide-exampleBlock">Click the icon to activate the popout object.</div>
+    </div>
+    <div class="split-right"><!-- Floating popout object right to ensure it's visible when active for this example -->
+        <div ng-class="{'popout_isActive':isColumnsPopoutVisible}" class="popout">
+            <div ng-click="isColumnsPopoutVisible = !isColumnsPopoutVisible" ng-init="isColumnPopoutVisible = false" class="popout-icn">
+                <i class="icn icn_columns"></i><i class="icn icn_angle-down"></i>
+            </div>
+            <div class="popout-container">
+                <div class="popout-container-hd">
+                    <span class="text text_darkBoldSm">Show/Hide Columns (Max 5):</span>
+                </div>
+                <div class="popout-container-bd">
+                    <ul class="vList">
+                        <li>
+                            <label class="checkbox">
+                                <input type="checkbox">
+                                <span class="checkbox-text">
+                                    Full Name
+                                </span>
+                            </label>
+                        </li>
+                        <li>
+                            <label class="checkbox">
+                                <input type="checkbox">
+                                <span class="checkbox-text">
+                                    Email
+                                </span>
+                            </label>
+                        </li>
+                        <li>
+                            <label class="checkbox">
+                                <input type="checkbox">
+                                <span class="checkbox-text">
+                                    Practice Group
+                                </span>
+                            </label>
+                        </li>
+                        <li>
+                            <label class="checkbox">
+                                <input type="checkbox">
+                                <span class="checkbox-text">
+                                    User Type
+                                </span>
+                            </label>
+                        </li>
+                        <li>
+                            <label class="checkbox">
+                                <input type="checkbox">
+                                <span class="checkbox-text">
+                                    Account Status
+                                </span>
+                            </label>
+                        </li>
+                        <li>
+                            <label class="checkbox">
+                                <input type="checkbox">
+                                <span class="checkbox-text">
+                                    Last Login
+                                </span>
+                            </label>
+                        </li>
+                        <li>
+                            <label class="checkbox checkbox_isDisabled">
+                                <input type="checkbox" disabled="">
+                                <span class="checkbox-text">
+                                    Another Option
+                                </span>
+                            </label>
+                        </li>
+                        <li>
+                            <label class="checkbox checkbox_isDisabled">
+                                <input type="checkbox" disabled="">
+                                <span class="checkbox-text">
+                                    Another Option
+                                </span>
+                            </label>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

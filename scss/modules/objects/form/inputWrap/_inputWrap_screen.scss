@@ -1,0 +1,41 @@
+/*--------------------------------------------------- 
+    inputWrap:
+
+    Allows the use of pseudo elements on elements
+    that don't allow them by styling inputWrap
+    instead.
+
+    ------------SAMPLE MARKUP--------------
+    <div class="inputWrap">
+        <div class="inputWrap-element">
+            //element
+        </div>
+        <div class="inputWrap-icn">
+            //icon or whatever
+        </div>
+    </div>
+---------------------------------------------------*/
+
+.inputWrap {
+    position: relative;
+}
+
+.inputWrap_search > .inputWrap-icn { // The element that will house an <i> element for icons.
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    font-size: $FONT_SIZE_MEDIUM;
+    color: $ORANGE_MED_DARK;
+}
+
+.inputWrap_icnOutsideRight > .inputWrap-icn { // Applies the icn after/to the right of/outside of an input. 
+    position: absolute;
+    right: -27px;
+    top: 8px;
+    font-size: $FONT_SIZE_SMALL;
+    color: $GREY_MEDIUM_DARK;
+}
+
+.mix-inputWrap_lgFont > .inputWrap-icn {
+    font-size: $FONT_SIZE_LARGE;
+}

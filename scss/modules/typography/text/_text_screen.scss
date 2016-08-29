@@ -1,0 +1,123 @@
+/*--------------------------------------------------- 
+    Text:
+
+    Styling for various text/typography.
+
+    Note: There are instances where a mixin class 
+    and extension class share the same property and
+    are comma separated on the same bracket.
+---------------------------------------------------*/
+
+.text {
+    font-size: $DEFAULT_FONT_SIZE;
+    font-family: $FONT_FAMILY_STD;
+    line-height: 1.2;
+}
+
+.text_humble {
+    font-size: $FONT_SIZE_SMALL;
+    font-weight: lighter;
+}
+
+.text_block {
+    display: block; // In case this selector is used on an inline element.
+    color: $GREY_MEDIUM_DARK;
+}
+
+.text_smallBlock {
+    display: block; // In case this selector is used on an inline element.
+    font-size: $FONT_SIZE_SMALL;
+    color: $GREY_MEDIUM_DARK;
+}
+
+.text_boldAccent {
+    font-family: $FONT_FAMILY_STD;
+    font-weight: bold;
+    color: $ORANGE;
+}
+
+.text_lightAccent {
+    font-weight: 100;
+    color: $ORANGE;
+}
+
+.text_conspicuousAccent {
+    font-weight: bold;
+    color: $PINK;
+}
+
+.text_distinguish {
+    font-size: $FONT_SIZE_LARGE;
+    text-transform: uppercase;
+    color: $GREY_MEDIUM;
+}
+
+.text_humbleBlock {
+    display: block; // In case this selector is used on an inline element.
+    padding: 5px 0; 
+    font-size: $FONT_SIZE_XSMALL;
+    color: $GREY_MEDIUM_DARK;
+    text-transform: uppercase;
+}
+
+.text_smallDarkHandsome {
+    font-size: $FONT_SIZE_XSMALL;
+    color: $GREY_MEDIUM_DARK;
+    text-transform: uppercase;
+}
+
+.text_upperClass {
+    font-size: $FONT_SIZE_XSMALL;
+    color: $GREY_DARK_LIGHT;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.text_darkBoldSm {
+    font-size: $FONT_SIZE_SMALL;
+    font-weight: bold;
+    color: $OFFBLACK;
+}
+
+.text_circleWrap {
+    @include inline-block();
+    @include border-radius(10px); // Circular!
+    padding: 2px 6px 1px 6px;
+    font-size: $FONT_SIZE_XSMALL;
+    color: $WHITE;
+    background: $GREY_MEDIUM_DARK;
+}
+
+.text_copy { // Functions as something to wrap around body copy.
+    color: $GREY_DARK;
+    line-height: 1.5;
+}
+
+.text_copyNoticed { // For the occassional inline word or words that needs to stand out.
+    font-weight: bold;
+    font-size: inherit;
+    color: $GREY_DARK;
+}
+
+// Extensions and mixins that share the same properties.
+.text_upper,
+.mix-text_upper { /* Extension/mixin for uppercase text. */
+    text-transform: uppercase;
+}
+
+// Start Mixins
+.mix-text_darken {
+    color: $GREY_DARK;
+}
+
+.mix-text_neutral {
+    color: $GREY_MEDIUM_DARK;
+}
+
+.mix-text_conspicuous {
+    color: $PINK;
+}
+
+.mix-text_inheritSize {
+    font-size: inherit;
+}

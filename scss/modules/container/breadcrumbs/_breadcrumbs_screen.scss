@@ -1,0 +1,46 @@
+/*--------------------------------------------------- 
+    Breadcrumbs:
+
+    Horizontal list and spacer for breadcrumb links 
+---------------------------------------------------*/
+
+.breadcrumbs-list {
+    font-size: 0;
+}
+
+.breadcrumbs-list > * {
+    display: inline-block;
+    margin-right: 9px;
+    position: relative;
+    font-size: $FONT_SIZE_SM;
+    vertical-align: middle;
+    text-align: center;
+}
+
+.breadcrumbs-list > * + * {
+    padding-left: 15px;
+}
+
+.breadcrumbs-list > * + *:before {
+    content: ">";
+    position: absolute;
+    left: -1px;
+    top: 0;
+    color: $GREY_DARK;
+    font-size: $FONT_SIZE_MD;
+    line-height: 1;
+    background: none;
+}
+
+.breadcrumbs-list-item > * {
+    padding: 5px 0; // Increase clickable area.
+    font-size: $FONT_SIZE_SM;
+    line-height: 1.2;
+    font-weight: 100;
+    color: $ORANGE;
+}
+
+.breadcrumbs-list-item_isCurrent > * {
+    color: $GREY_DARK;
+    cursor: auto;
+}

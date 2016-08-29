@@ -1,0 +1,28 @@
+/*--------------------------------------------------- 
+    Constrain:
+
+    Provides a constraining max width on your objects
+    and centers them.
+---------------------------------------------------*/
+
+.constrain {
+    @include constrain-main-width(); // includes --> max-width: 1024px; padding: 0 10px; margin: 0 auto;.
+}
+
+.constrain_sm {
+	max-width: 330px;
+}
+
+.constrain_md {
+    max-width: 438px;
+}
+
+.constrain_mdLg {
+    max-width: 475px;
+}
+
+// Add this mixin class when you only want to use the max-width and not padding or margin from contrain-main-width() mixin.
+.mix-constrain_natural {
+    padding: 0; // Resets these values from the mixin.
+    margin: 0; // Resets these values from the mixin.
+}

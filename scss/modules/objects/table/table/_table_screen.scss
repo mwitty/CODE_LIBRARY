@@ -1,0 +1,165 @@
+/*---------------------------------------------------------------
+    Table:
+
+    Base styles for tables. 
+
+    Other specific cell objects are dependent on table extensions 
+    to fully function (see ".cell_filter" and ".cell_status").
+----------------------------------------------------------------*/
+
+ 
+/* TableOverflow allows scrolling on the table, as well as
+keeping the border visible when the table does scroll 
+since the border is applied to this element */
+.tableOverflow { 
+    border: 1px solid $GREY_LIGHT;
+    overflow: auto;
+    position: relative; // Needed for overlay objects (Use Case: local loaders/throbbers).
+}
+
+.tableOverflow_limitHeight {
+    max-height: 700px;
+}
+
+.table {
+    @include border-radius(2px);
+    width: 100%;
+    font-size: $FONT_SIZE_SMALL;
+}
+
+.table > * > * > * {
+    text-align: left;
+    vertical-align: middle; // All table cells including TH elements
+}
+
+.table > * > * > * + * { // All table cells following a table cell, including TH elements.
+    border-left: 1px solid $GREY_LIGHT;
+}
+
+.table-head-row {
+    border-bottom: 1px solid $GREY_LIGHT;
+    position: relative;
+    background: $GREY_LIGHTER;
+}
+
+.table-head-row-cell {
+    height: 38px;
+    color: $GREY_DARK;
+    font-family: $FONT_FAMILY_STD;
+    font-weight: bold;
+}
+
+.table-head-row-cell_indicate {
+    cursor: pointer;
+}
+
+.table-head-row-cell:hover {
+    background: $GREY_LIGHT;
+}
+
+/* AFFECTS NON-STANDARD / NON-INTERACTIVE / PLAIN TABLES. */
+.table-head_plain > * > *:hover {
+    background: $GREY_LIGHTER; // No changes on hover. Keeps the same background color as the table row.
+}
+/* END .table-head_plain */
+
+/* Mixin for .table-head-row-cell to change color of nested icon. See ".cell_filter" extension. */
+.table-head-row-cell_desc .icn_sort-desc,
+.table-head-row-cell_asc .icn_sort-asc { // Due to the fact that the clickable object is the <th>, we're styling icons from here.
+    color: $ORANGE_MED_DARK;
+}
+
+.table-body > * {
+    background: $WHITE;
+}
+
+.table-body > * > * {
+    padding: 4px 8px 4px 10px ;
+    height: 30px;
+    max-width: 0; // Important for being able to control the width of an important column. See ".table-body-row-cell_longText".
+    color: $OFFBLACK;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    -ms-text-overflow: ellipsis;
+}
+
+.table-body > * + *,
+.table-body + .table-body > * { // This is used due to tbody's being repeated since the angular is architected this way.
+    border-top: 1px solid $GREY_LIGHT;
+}
+
+.table-body-row_highlightSuccess {
+    background: $BLUE_LIGHT;
+}
+
+.table-body-row:hover {
+    background: $OFFWHITE_ORANGE_TINT_LIGHT;
+}
+
+.table-body-row:hover .table-body-row-cell {
+    border-color: $OFFWHITE_ORANGE_TINT; 
+}
+
+// Keeping left border color on these cells upon table-row:hover. (Part of "cell_status" cells. See "cell" object)
+.table-body-row:hover .table-body-row-cell_processError,
+.table-body-row:hover .table-body-row-cell_validationError,
+.table-body-row:hover .table-body-row-cell_success {
+    border-color: $GREY_LIGHT;
+}
+
+.table-body-row:hover .table-body-row-cell-link {
+    color: $ORANGE_MED_DARK;
+}
+
+.table-body-row:hover .table-body-row-cell-link:hover {
+    text-decoration: underline;
+}
+
+/* Extension for padding on cells that contain other objects. Padding provides visual separation for the nested object. */
+.table-body-row_cellPadding > * {
+    padding: 18px;
+}
+
+.mix-table-body-row_processError > * { // Specific color for process error drop-down. Targets a cell.
+    background: $PINK_LIGHT;
+}
+
+.mix-table-body-row_validationError > * { // Specific color for validation error drop-down. Targets a cell.
+    background: $OFFWHITE_ORANGE_TINT;
+}
+
+.table-body-row-cell_longText {
+    width: 30%; // For important columns that need some width control.
+}
+
+/* Extensions that get static widths to prevent the default cell truncation with an ellipsis */ 
+.table-body-row-cell_narrow {
+    width: 80px;
+}
+
+.table-body-row-cell_narrowSm {
+    width: 60px;
+}// End static width extensions
+
+/* Various Cell States. Provides background color for "cell_status" cells */
+.table-body-row-cell_processError {
+    background: $PINK_LIGHT;
+}
+
+.table-body-row-cell_validationError {
+    background: $OFFWHITE_ORANGE_TINT;
+}
+
+.table-body-row-cell_success {
+    background: $GREEN_LIGHT;
+}
+
+// TABLE EXTENSIONS
+.table_plain .table-body > * > * {
+    max-width: none;
+    text-overflow: clip;
+}
+
+.table_plain .table-head > * > * {
+    cursor: default;
+}

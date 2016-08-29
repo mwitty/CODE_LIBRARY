@@ -1,0 +1,50 @@
+/*--------------------------------------------------- 
+    Grid:
+
+    A major layout object
+
+    EXAMPLE MARKUP: 
+
+    <div class="grid">
+        <div class="grid-col grid-col_6of12">
+          //content
+        </div>
+        <div class="grid-col grid-col_6of12">
+          //content
+        </div>
+    </div>
+---------------------------------------------------*/
+
+$GRID-SPACER_PX: 25px;
+$GRID-WIDTH: 1024px;
+
+//Calculated Variables
+$GRID-SPACER_PERCENTAGE: percentage($GRID-SPACER_PX / $GRID-WIDTH);
+
+.grid {
+    @include micro-clearfix();
+    margin-left: (-$GRID-SPACER_PERCENTAGE);
+}
+
+//12 column layout
+.grid-col {
+    padding-left: $GRID-SPACER_PERCENTAGE;
+    float: left;
+}
+
+.grid-col_2of12 {
+    width: 16.6666% - $GRID-SPACER_PERCENTAGE;
+}
+
+.grid-col_10of12 {
+    width: 83.3333% - $GRID-SPACER_PERCENTAGE;
+}
+
+// 5 column layout
+.grid-col_3of10 {
+    width: 30% - $GRID-SPACER_PERCENTAGE;
+}
+
+.grid-col_7of10 {
+    width: 70% - $GRID-SPACER_PERCENTAGE;
+}

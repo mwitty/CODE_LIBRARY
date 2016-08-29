@@ -1,0 +1,48 @@
+/*--------------------------------------------------- 
+    hList:
+
+    Horizontal List container styles (horizontal spacing)
+---------------------------------------------------*/
+
+.hList {
+    font-size: 0;
+}
+
+.hList > * {
+    @include inline-block();
+    font-size: $DEFAULT_FONT_SIZE;
+    vertical-align: middle;
+}
+
+.hList > * + * {
+    padding-left: 10px;
+}
+
+.hList_spacedLg > * + * {
+    padding-left: 22px;
+}
+
+.hList_alignTop > * {
+    vertical-align: top;
+}
+
+.hList_alignBase > * {
+    vertical-align: baseline;
+}
+
+/* This extension was taken from Optum Search */
+.hList_footer {
+    text-align: center;
+}
+
+.hList_footer > * + * {
+    border-left: 1px solid $GREY_LIGHTEST;
+    padding-left: 6px;
+    margin-left: 6px;
+}
+
+.hList_footer > * > * {
+    color: $GREY_DARK_LIGHT;
+    font-size: $FONT_SIZE_XSMALL;
+}
+/* End optum search extension */

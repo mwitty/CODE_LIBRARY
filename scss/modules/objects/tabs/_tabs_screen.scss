@@ -1,0 +1,89 @@
+/*--------------------------------------------------- 
+    Tabs:
+
+    A tabbed interface: NOT CURRENTLY USED ON SITE
+
+    -------------EXAMPLE MARKUP------------- 
+    <div class="tabs">
+        <ul class="tabs-list">
+            <li class="tabs-list-item tabs-list-item_isActive"> // EXAMPLE TAB
+                <span class="tabs-list-item-tab">
+                    <span class="tabs-list-item-tab-icon">
+                        <i class="icn icn_flag"></i>
+                    </span> 
+                    <span class="tabs-list-item-tab-label">
+                        Flagged Patients
+                    </span>
+                    <span class="tabs-list-item-tab-count">
+                        <span class="text text_circleWrap">36</span>
+                    </span>
+                </span>
+            </li>
+        </ul>
+        <div class="tabs-list-bd"> // EXAMPLE TAB BD
+            //copy
+        </div>
+    </div>
+    -----------------------------------------------
+---------------------------------------------------*/
+
+/* Variables */
+$tabs-WIDTH: 960px;
+$tabs-LIST_ITEM_WIDTH: 234px;
+$tabs-LIST_ITEM_PADDING_SIDES: 15px;
+
+/* Calculated Variables */
+$tabs-LIST_ITEM_SIDE_PADDING_PERCENTAGE: percentage($tabs-LIST_ITEM_PADDING_SIDES / $tabs-WIDTH);
+
+.tabs-list {
+    font-size: 0;
+}
+
+.tabs-list > * {
+    @include border-radius(2px 2px 0 0);
+    @include inline-block();
+    border-top: 1px solid $GREY_LIGHTER;
+    border-left: 1px solid $GREY_LIGHTER;
+    border-right: 1px solid $GREY_LIGHTER;
+    border-bottom: 1px solid transparent;
+    padding: 5px $tabs-LIST_ITEM_SIDE_PADDING_PERCENTAGE 9px;
+    font-size: $DEFAULT_FONT_SIZE;
+    background: $GREY_LIGHTER;
+    cursor: pointer;
+    vertical-align: bottom;
+    width: percentage($tabs-LIST_ITEM_WIDTH / $tabs-WIDTH);
+}
+
+.tabs-list > * + * {
+    margin-left: 2px;
+}
+
+.tabs-list-bd {
+    border: 1px solid $GREY_LIGHTER;
+    padding: 20px 15px;
+    background: $WHITE;
+}
+
+.tabs-list-item_isActive {
+    border-color: $GREY_LIGHTER;
+    border-bottom-color: $WHITE;
+    margin-bottom: -1px;
+    padding-top: 10px;
+    background: $WHITE;
+}
+
+.tabs-list-item-tab-icon {
+    font-size: $FONT_SIZE_MEDIUM_XLARGE;
+    color: $PINK_DARK;    
+}
+
+.tabs-list-item-tab-label {
+    font-size: $FONT_SIZE_XSMALL;
+    font-weight: bold;
+    line-height: 1.2;
+    color: $GREY_DARK;
+}
+
+.tabs-list-item-tab-count {
+    padding: 0 5px;
+}

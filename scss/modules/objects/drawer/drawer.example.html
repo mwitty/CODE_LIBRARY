@@ -1,0 +1,58 @@
+<!-- #METADATA
+@title Drawer
+@type Module / Object
+@class "drawer"
+@description A vertical spacing object that spaces drop-down table drawers with an hd, bd, and an ft. The ft is text-aligned right by default.
+@note This object mainly deals with layout. Notice the top, middle, and bottom section spacing. Drawer provides mainly this.
+-->
+<div class="drawer">
+    <div class="drawer-hd">
+        <div class="drawer-hd-item">
+            <h2 class="hdg hdg_1 mix-hdg_darken ng-binding">Error Details for Job ID: 6</h2>
+        </div>
+        <div class="drawer-hd-item">
+            <div class="text text_block mix-text_darken">Queued On: <span>2015-03-30,20:00</span></div>
+        </div>
+    </div>
+    <div class="drawer-bd">
+        <div class="tableOverflow">
+            <table class="table">
+                <thead class="table-head table-head_drawer">
+                    <tr class="table-head-row">
+                        <th class="table-head-row-cell">
+                            <div class="cell">Details</div>
+                        </th>
+                        <th class="table-head-row-cell">
+                            <div class="cell">Severity</div>
+                        </th>
+                    </tr>
+                </thead>
+                <tbody class="table-body">
+                    <!-- ngRepeat-->
+                    <tr>
+                        <td>Unable to parse the uploaded file. Please check the file contents before trying again.</td>
+                        <td>FATAL</td>
+                    </tr>
+                    <!-- end ngRepeat -->
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div class="drawer-ft">
+        <form id="errorDetails">
+            <ul class="hList">
+                <li>
+                    <label class="checkbox">
+                        <input id="errorAddressed" type="checkbox">
+                    </label>
+                    <span class="checkbox-text">
+                        <span class="text text_humble" for="errorAddressed">Mark as Addressed</label>
+                    </span>
+                </li>
+                <li>
+                    <button class="btn btn_neutral">Save &amp; Close</button>
+                </li>
+            </ul>
+        </form>
+    </div>
+</div>

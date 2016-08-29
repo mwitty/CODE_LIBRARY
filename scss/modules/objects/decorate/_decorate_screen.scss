@@ -1,0 +1,28 @@
+/*------------------------------------------------------ 
+    
+    Decorate:
+
+    Provides a full-width container to apply background 
+    or other decorative styles to.
+------------------------------------------------------*/
+
+.decorate {
+    background: $WHITE;
+}
+
+.decorate_shadowed {
+    @include box-shadow(0px 0px 4px 1px $GREY_MEDIUM_DARK);
+    position: relative;
+}
+
+.decorate_neutral {
+    background: $GREY_LIGHTEST;
+}
+
+.decorate_light {
+    background: $OFFWHITE;
+}
+
+.decorate_top { // Applies border top color
+    border-top: 1px solid $GREY_LIGHTEST;
+}

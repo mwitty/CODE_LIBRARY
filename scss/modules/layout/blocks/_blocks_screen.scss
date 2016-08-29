@@ -1,0 +1,44 @@
+/*--------------------------------------------------- 
+    Blocks:
+
+    A layout object for controlling even width
+    distribution and clean line breaks.
+---------------------------------------------------*/
+
+.blocks {
+    margin: -36px 0 0 -36px;
+    font-size: 0;
+}
+
+.blocks > * {
+    @include inline-block();
+    @include box-sizing(border-box);
+    padding: 36px 0 0 36px; // Padding is the inverse of the margin values from .blocks
+    font-size: $DEFAULT_FONT_SIZE;
+    vertical-align: top;
+}
+
+.blocks_2up > * {
+    width: 50%;   
+}
+
+.blocks_3up > * {
+    width: 33.3333%;   
+}
+
+.blocks_4up > * {
+    width: 25%;
+}
+
+.blocks_5up > * {
+    width: 20%;
+}
+
+/* Mixin to decrease the object's default spacing */
+.mix-blocks_spacedSm {
+    margin: -26px 0 0 -26px;
+    
+    // Padding is the inverse of the margin values
+    & > * { padding: 26px 0 0 26px; }
+
+}

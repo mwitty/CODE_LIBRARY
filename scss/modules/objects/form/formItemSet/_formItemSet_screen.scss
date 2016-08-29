@@ -1,0 +1,52 @@
+/*--------------------------------------------------- 
+    
+    FormItemSet:
+
+    An item to contain a simple head and body section.
+    Intended for controlling the layout of a label and 
+    form element.
+
+    ------Sample Markup ------------
+
+    <label class="formItemSet">
+        <div class="formItemSet-hd">
+            ---- label copy goes here ----
+        </div>
+        <div class="formItemSet-bd">
+           --- Form Item ----
+        </div>
+    </label>
+
+    --------------------------------
+
+---------------------------------------------------*/
+
+.formItemSet {
+    display: block; // Needed if an inline element is used.
+    max-width: 212px;
+}
+
+.formItemSet-hd {
+    margin-bottom: 8px;
+}
+
+.formItemSet-hd-sub { // this element is not always present.
+    margin-top: 5px;
+}
+
+.formItemSet_canExpand {
+    max-width: none;
+}
+
+/* Extension for alternative layout values */
+.formItemSet_alt1 {
+    max-width: 330px;
+}
+
+.formItemSet_alt1 > .formItemSet-hd {
+    margin-bottom: 6px;
+}
+
+.formItemSet_alt2Expand {
+    max-width: 100%;
+}

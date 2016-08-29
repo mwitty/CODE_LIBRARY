@@ -1,0 +1,42 @@
+/*--------------------------------------------------- 
+    Bare Table:
+
+    Styling for tables that are stripped of most extra
+    styles, like border, background color, hover states
+    etc, but retain the basic table structure.
+---------------------------------------------------*/
+
+.bareTable {
+    width: 100%;
+}
+
+.bareTable > * > * > * { // All table cells
+    text-align: left;
+}
+
+.bareTable > * > * > * + * {
+    padding-left: 15px;
+}
+
+.bareTable-head-row-cell {
+    padding-bottom: 8px;
+    font-family: $FONT_FAMILY_STD;
+    font-weight: bold;
+    color: $GREY_DARK;
+}
+
+.bareTable-head-row-cell_8of20 {
+    width: 40%;
+}
+
+.bareTable-head-row-cell_5of20 {
+    width: 25%;
+}
+
+.bareTable-head-row-cell_2of20 {
+    width: 10%;
+}
+
+.bareTable-body > * + * > * { // table cells in non-first table rows within the .bareTable-body.
+    padding-top: 8px;
+}

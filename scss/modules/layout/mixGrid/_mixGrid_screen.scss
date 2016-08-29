@@ -1,0 +1,37 @@
+/*--------------------------------------------------- 
+    mixGrid:
+
+    A major layout object with one fixed column and one fluid
+
+    EXAMPLE MARKUP: 
+
+    <div class="mixGrid">
+        <div class="mixGrid-fixedCol">
+          //content
+        </div>
+        <div class="mixGrid-col mixGrid-fluidCol">
+          //content
+        </div>
+    </div>
+---------------------------------------------------*/
+
+// Variables
+$GRID-SPACER: 24px;
+$GRID-WIDTH: 1024px;
+
+.mixGrid {
+    @include micro-clearfix();
+    margin-left: (-$GRID-SPACER);
+}
+
+.mixGrid-fixedCol {
+    width: 248px;
+    padding-left: $GRID-SPACER;
+    float: left;
+}
+
+.mixGrid-fluidCol {
+    @include clearfix-overflow();
+    padding-left: $GRID-SPACER;
+    min-height: 400px; // Without a min-height, the necessary overflow value above could potentially cut off an absolutely positioned element on a page with less content.
+}

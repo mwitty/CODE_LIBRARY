@@ -1,0 +1,9 @@
+/*--------------------------------------------------- 
+    vList:
+
+    Vertical List container styles (vertical spacing)
+---------------------------------------------------*/
+
+.vList > * + * {
+    margin-top: 10px;
+}

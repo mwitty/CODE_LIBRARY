@@ -1,0 +1,42 @@
+/*--------------------------------------------------- 
+    ChildNav:
+
+    Styles for childNav within the main navigation.
+    Contained by mainNav object. 
+
+    NOTE: Childnav's visibility is styled in the 
+    _mainNav partial!
+---------------------------------------------------*/
+
+.childNav {
+    text-align: left;    
+}
+
+.childNav-list {
+    border-bottom: 1px solid #eeefed; // Border only gets applied to IE8. Other browsers get their style with browser hack below.
+    @include box-shadow(0 3px 5px -3px $GREY_DARK_LIGHT);
+    background: $OFFWHITE_ORANGE_TINT_LIGHT;
+
+    :root & { // BROWSER HACK (Everything except IE8): no bottom border in modern browsers so 1px border doesn't contrast with hover color on last item.
+        border-bottom: none;
+    }
+
+}
+
+.childNav-list-item-label {
+    display: block;
+    border-right: 1px solid $GREY_LIGHTEST;
+    border-left: 1px solid $GREY_LIGHTEST;
+    padding: 15px 28px;
+    font-size: $FONT_SIZE_SMALL;
+    line-height: 1.2;
+    font-weight: bold;
+    text-transform: uppercase;
+    color:  $GREY_DARK_LIGHT;
+}
+
+.childNav-list-item-label:hover {
+    background: $GREY_DARK_LIGHT;
+    border-color: $GREY_DARK_LIGHT;
+    color: $GREY_LIGHTEST;
+}

@@ -1,0 +1,49 @@
+/*------------------------------------------------------- 
+    
+    subNav:
+    
+    Note: _subNav is not a child of mainNav, it's a sibling.
+    Subnav functions as redundant/additional navigation.
+--------------------------------------------------------*/
+
+.subNav {
+    background: $GREY_LIGHTEST;
+    color: $GREY_DARK_LIGHT;
+    text-align: left;
+    @include box-shadow(0px 4px 4px -4px $GREY_MEDIUM);
+}
+
+.subNav-list {
+    @include constrain-main-width();
+    font-size: 0;
+}
+
+.subNav-list > * {
+    @include inline-block();
+    font-size: $FONT_SIZE_SMALL;
+    line-height: 1.2;
+}
+
+.subNav-list-item-label {
+    display: block;
+    padding: 16px 28px;
+    text-transform: uppercase;
+    font-weight: bold;
+    color: $GREY_DARK_LIGHT;
+}
+
+.subNav-list-item-label:hover {
+    background: $OFFWHITE_ORANGE_TINT_LIGHT;
+}
+
+.subNav-list-item_isActive {
+    background: $GREY_DARK_LIGHT;
+}
+
+.subNav-list-item_isActive > .subNav-list-item-label {
+    color: $GREY_LIGHTEST;
+}
+
+.subNav-list-item_isActive:hover > .subNav-list-item-label {
+    color: $GREY_DARK_LIGHT;
+}

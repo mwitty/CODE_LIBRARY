@@ -1,0 +1,44 @@
+/*--------------------------------------------------------- 
+    checkbox:
+
+    Horizontal spacing and styles for a checkbox and label
+    
+    SAMPLE MARKUP
+    --------------
+    
+    <label class="checkbox">
+        <input type="checkbox" id="Filter" />
+        <span class="checkbox-text">
+            Text goes here
+        </span>
+    </label>
+
+    --------------
+----------------------------------------------------------*/
+
+.checkbox {
+    color: $GREY_DARK;
+    cursor: pointer;
+}
+
+.checkbox > * {
+    @include inline-block();
+    margin: 0;
+    vertical-align: middle;
+}
+
+.checkbox-text {
+    padding-left: 8px;
+}
+
+.checkbox_narrow .checkbox-text {
+    padding-left: 4px;
+}
+
+.checkbox_isDisabled {
+    color: $GREY_MEDIUM;
+}
+
+.mix-checkbox_spacedLeft {
+    margin-left: 15px;
+}

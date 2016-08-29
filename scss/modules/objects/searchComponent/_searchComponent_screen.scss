@@ -1,0 +1,155 @@
+/* ---------------------------------------------------------------------
+ Search Component:
+ Styling for search components. Controlling layout and input styles.
+
+EXAMPLE MARKUP:
+<div class="searchComponent searchComponent_home" ng-class="{'searchComponent_home_isActive' : true}">
+    <div class="searchComponent-element">
+        <div c-autocomplete
+             data-search="bufferedSearch"
+             data-selected="selectedId"
+             ng-model="searchQuery"
+             data-placeholder="I need..."
+             data-callback="selectSearch"
+             data-template="autoCompleteHomePage"
+             data-textbox-classes="mix-textbox_flat">
+        </div>
+    </div>
+    <div class="searchComponent-cta">
+        <a href="/Software/search?q={{searchQuery}}" class="btn btn_bulky">@KernelResources.Search</a>
+    </div>
+    <div class="searchComponent-icn">
+        <i class="icn icn_triangle_down"></i>
+    </div>
+</div>
+------------------------------------------------------------------------ */
+$searchComponent_max_width: 640px;
+$searchComponent-HEIGHT: 42px;
+$searchComponent-icn-WIDTH_HEIGHT: $searchComponent-HEIGHT;
+$searchComponent_home-HEIGHT: 60px;
+$searchComponent_home-icn_WIDTH_HEIGHT: $searchComponent_home-HEIGHT;
+$searchComponent-element-WIDTH: 85%;
+
+.searchComponent {
+	display: table;
+	width: 100%;
+	position: relative;
+}
+
+.searchComponent-element {
+	display: table-cell;
+	width: $searchComponent-element-WIDTH; // 85% width regardless of if CTA extension class is added or else search element is too long.
+}
+
+.searchComponent-element [type=search] {
+	color: $GREY;
+	display: inline-block;
+	width: 100%;
+	height: $searchComponent-HEIGHT;
+	background-color: $GREY_LIGHTEST;
+	border: 1px solid $GREY_LIGHTER;
+	transition: background-color .25s ease-in-out;
+	font-size: $FONT_SIZE_LG;
+	padding: 5px;
+	padding-left: 10px;
+	padding-right: $searchComponent-icn-WIDTH_HEIGHT;
+	box-sizing: border-box;
+
+	// Styling for when user applies cursor
+	&:focus {
+		background-color: transparent;
+		color: $GREY_DARK;
+		box-shadow: inset 0 0 5px $GREY_LIGHTER;
+		outline: 0; // because we're already styling it on focus
+	}
+
+	// Styling Placeholders for different browsers.
+	&::-webkit-input-placeholder { color: $GREY; } // for (Chrome/Safari/Opera)
+	&:-ms-input-placeholder, // for IE and Edge.
+	&::-ms-input-placeholder {color: $GREY;}
+	&:-moz-placeholder, // Firefox
+	&::-moz-placeholder { color: $GREY; }
+}
+
+.searchComponent-icn {
+	display: block;
+	color: $TEAL_DARK;
+	position: absolute;
+	left: 16px;
+	top: 14px;
+	background-color: $TEAL_LIGHT;
+	height: $searchComponent-icn-WIDTH_HEIGHT;
+	width: $searchComponent-icn-WIDTH_HEIGHT;
+	color: #ffffff;
+	left: auto;
+	right: (100% - $searchComponent-element-WIDTH);
+	top: 0;
+	z-index: 2; // This overrides autocomplete object styling which has z-index of 100
+	font-size: $FONT_SIZE_LG;
+
+	& > .icn {
+		position: absolute;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		top: 0;
+		margin: auto;
+		height: $FONT_SIZE_LG; // font-size determines the width and height of the icon.
+		width: $FONT_SIZE_LG; // font-size determines the width and height of the icon.
+	}
+}
+.searchComponent_home {
+	opacity: 0;
+	transition: opacity .3s linear;
+}
+
+.searchComponent_home_isActive {
+	opacity: 1;
+}
+
+.searchComponent_home .searchComponent-element {
+	width: 100%;
+}
+
+
+.searchComponent_home .searchComponent-element [type=search] {
+	height: $searchComponent_home-HEIGHT;
+	border: 2px solid #ffffff;
+	background-color: #ffffff;
+	padding-right: 60px;
+	padding-left: 14px;
+	font-size: $FONT_SIZE_XXL;
+	border-radius: 0;
+	box-shadow: 0 0 5px $GREY_DARK;
+	text-overflow: ellipsis;
+
+	&:focus {
+		background-color: #ffffff;
+		color: $GREY_DARK;
+	}
+
+}
+
+.searchComponent_home .searchComponent-icn {
+	height: $searchComponent_home-icn_WIDTH_HEIGHT;
+	width: $searchComponent_home-icn_WIDTH_HEIGHT;
+	font-size: $FONT_SIZE_XXL;
+	right: 0;
+	left: auto;
+
+	& > .icn {
+		height: $FONT_SIZE_XXL; // font-size determines the width and height of the icon.
+		width: $FONT_SIZE_XXL; // font-size determines the width and height of the icon.
+	}
+}
+
+.searchComponent-cta {
+	display: none; // Not displayed unless it has the extension below displaying it
+}
+
+/* ---- Extensions ---- */
+
+.searchComponent_withCta .searchComponent-cta {
+	display: table-cell; // Actually displaying CTA
+	padding-left: 10px;
+}

@@ -1,0 +1,52 @@
+<!-- #METADATA
+@title Input
+@type Form
+@class "input"
+@description Styles text, number, browse, and select input elements when corresponding extensions are used. Inputs are designed to span 100% of their parent container.
+@note The instance of the search input here uses the inputWrap object, a separate object. See inputWrap object for more info.
+-->
+<ul class="blocks blocks_3up">
+    <li>
+        <input type="text" class="input input_text" placeholder="Text Input" />
+    </li>
+    <li>
+        <input type="number" class="input input_number" placeholder="Number Input" />
+    </li>
+    <li>
+        <input type="text" class="input input_text mix-input_isDisabled" placeholder="Disabled Input"/>
+    </li>
+    <li>
+        <input type="text" class="input input_text mix-input_prominent" placeholder="mix-input_prominent"/>
+    </li>
+    <li>
+        <input type="text" class="input input_text mix-input_outline" placeholder="mix-input_outline"/>
+    </li>
+    <li>
+        <input type="text" class="input input_text mix-input_error" placeholder="Error State" />
+    </li>
+    <li>
+        <select class="input input_select">
+            <option value="" selected disabled>Select Element</option>
+            <option value="1">option 1</option>
+            <option value="1">option 2</option>
+        </select>
+    </li>
+    <li>
+        <select class="input input_select input_select_isDisabled" disabled>
+            <option value="" selected disabled>Disabled Select Element</option>
+            <option value="1">option 1</option>
+            <option value="1">option 2</option>
+        </select>
+    </li>
+    <li>
+        <div class="inputWrap inputWrap_search">
+            <input type="search" class="input input_search" placeholder="Search" />
+            <div class="inputWrap-icn">
+                <i class="icn icn_search"></i>
+            </div>
+        </div>
+    </li>
+    <li>
+        <input type="file" class="input input_browse" />
+    </li>
+</ul>

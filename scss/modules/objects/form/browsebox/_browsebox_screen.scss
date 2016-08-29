@@ -1,0 +1,48 @@
+/* ---------------------------------------------------------------------
+ browsebox:
+ A styled file upload input for users to upload files for 
+ psuedo drag n' drop. The input itself is styled as the box,
+ allowing native file drop to work.
+
+ EXAMPLE MARKUP: 
+ <label for="" class="browsebox">
+ 	<div class="browsebox">
+	    <span class="browsebox-focus-copy"></span>
+	    <input type="file multiple" class="browseBox-focus-input" />
+	</div>
+ </label>
+------------------------------------------------------------------------ */
+
+.browsebox {
+	display: inline-block;
+	position: relative;
+    color: $GREEN;
+    font-weight: bold;
+    max-width: 260px;
+}
+
+.browsebox-input {
+	display: inline-block;
+	background-color: rgba($GREEN, .1);
+	border: 1px dashed $GREEN;
+	width: 70%;
+	max-width: 260px;
+	padding: 25% 15% 10% 15%;
+	z-index: 1;
+}
+
+.browsebox-copy {
+	font-weight: bold;
+	margin-bottom: 10px;
+	width: 85%;
+	padding-left: 15%;
+	padding-right: 0;
+	height: 60px;
+	position: absolute;
+	left: 0;
+	right: 0;
+	top: 0;
+	bottom: 0;
+	margin: auto;
+	pointer-events: none;
+}

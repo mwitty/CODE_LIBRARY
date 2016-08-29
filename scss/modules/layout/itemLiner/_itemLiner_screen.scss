@@ -1,0 +1,70 @@
+/* ---------------------------------------------------------------------
+Item Liner: 
+
+A basic object for implementing inline-block (horizontal layout). Add a
+multiplier extension to increase the spacing between objects. Applying
+"mix-itemLiner_wrapSpacing" to the parent will additionally provide vertical
+spacing even if the items wrap to the next line.
+
+EXAMPLE MARKUP
+<div class="itemLiner itemLiner_x3 mix-itemLiner_wrapSpacing">
+    <div class="itemLiner-item">
+        object or copy
+    </div>
+    <div class="itemLiner-item">
+        object or copy
+    </div>
+</div>
+------------------------------------------------------------------------ */
+$itemLiner-SPACE_MULTIPLIER_MIN: 2; // Bottom of the range
+$itemLiner-SPACE_MULTIPLIER_MAX: 5; // Top of the range: Increase this value if you need more extension classes (Providing a class with sufficient spacing for your needs.)
+$itemLiner-UNIT: 4px;
+
+.itemLiner {
+    font-size: 0;
+    
+    & > * {
+        display: inline-block;
+        font-size: $BASE_FONT_SIZE; // Reseting font size for children.
+        vertical-align: baseline;
+    }
+
+    & > * + * { // Any child item following a child item
+        margin-left: $itemLiner-UNIT;    
+    }
+    
+    // Add this mixin to provide wrap spacing, similar to a blocks object but without percentage widths.
+    &.mix-itemLiner_wrapSpacing {
+        margin: ($itemLiner-UNIT * -1) 0 0 ($itemLiner-UNIT * -1);
+        & > * { 
+            margin-left: 0;
+            padding: $itemLiner-UNIT 0 0 $itemLiner-UNIT;
+        }
+    }
+}
+
+@for $i from $itemLiner-SPACE_MULTIPLIER_MIN through $itemLiner-SPACE_MULTIPLIER_MAX {
+    .itemLiner_x#{$i} {
+        & > * + * { // Any child item following a child item
+            margin-left: $itemLiner-UNIT * $i; 
+        }
+        
+        // Add this mixin to provide wrap spacing, similar to a blocks object but without percentage widths.
+        &.mix-itemLiner_wrapSpacing {
+            margin: ($itemLiner-UNIT * (-1 * $i)) 0 0 ($itemLiner-UNIT * (-1 * $i));
+        	& > * {
+                margin-left: 0;
+                padding: ($itemLiner-UNIT * $i) 0 0 ($itemLiner-UNIT * $i);
+            }
+        }
+    }
+}
+
+// Alignment mixins
+.mix-itemLiner_alignMiddle > * {
+	vertical-align: middle;
+}
+
+.mix-itemLiner_alignCenter {
+	text-align: center;
+}

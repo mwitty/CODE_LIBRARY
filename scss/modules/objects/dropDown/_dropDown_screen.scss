@@ -1,0 +1,86 @@
+/*--------------------------------------------------- 
+    
+    dropDown:
+
+    An object with a child list that is visible
+    on hover.
+    
+---------------------------------------------------*/
+
+.dropDown-item {
+    padding: 0px 10px 0px;
+    /* invisible border with a width ensures element doesn't move when border width is applied on hover */
+    border-left: 1px solid transparent;
+    border-right: 1px solid transparent;
+    border-bottom: 1px solid transparent;
+    position: relative;
+    z-index: 300;
+}
+
+.dropDown-item_hasList:hover > .dropDown-item-list {
+    /* Avoiding the is-visually-seen() mixin in favor of a customized version of it */
+    @include box-shadow(0px 3px 3px -2px $GREY_DARK_LIGHT);
+    margin-bottom: 5px !important;
+    border-left: 1px solid #d9d9d5 !important;   // ---
+    border-right: 1px solid #d9d9d5 !important;  // Inherited by IE8 only. Mimicking box-shadow. See Browser hack below for modern override.
+    border-bottom: 2px solid #d9d9d5 !important; // ---
+    padding: 0px 15px 5px !important;
+    width: 100% !important;
+    height: auto !important;
+    position: absolute !important;
+    right: 0px;
+    background: $WHITE;
+    clip: inherit !important;
+    
+    // BROWSER HACK (Everything but IE8)
+    :root & {
+        border-left: 1px solid #efefef !important;   // Normal border for modern.
+        border-right: 1px solid #efefef !important;  // Normal border for modern.
+        border-bottom: 1px solid #efefef !important; // Normal border for modern.
+    }
+
+}
+
+.dropDown-item-link {
+    display: block;
+    padding-bottom: 10px; // Provides a Larger clickable area
+    width: 100%;          // Provides a Larger clickable area
+    color: $ORANGE_MED_DARK;
+}
+
+.dropDown-item-link-icon {
+    font-weight: bold;
+}
+
+.dropDown-item-link:hover {
+    color: $ORANGE;
+}
+
+.dropDown-item-link:active {
+    color: $ORANGE_DARK;
+}
+
+.dropDown-item-list {
+    @include is-visually-hidden();
+    @include box-sizing(border-box);
+}
+
+.dropDown-item-list > * > * {
+    display: block;
+    padding: 9px 0;
+    font-family: $FONT_FAMILY_STD;
+    font-weight: bold;
+    color: $GREY_DARK;
+}
+
+.dropDown-item-list > * > *:hover {
+    color: $GREY_DARK_LIGHT;
+}
+
+.dropDown-item-list > * > *:active {
+    color: $BLACK;
+}
+
+.dropDown-item-list > * + * {
+    margin-top: 2px;
+}

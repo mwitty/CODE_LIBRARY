@@ -1,0 +1,53 @@
+/*------------------------------------------------------ 
+    toggle:
+
+    Styles for toggle links that indicate when views
+    of an object are toggled from one state to another.
+------------------------------------------------------*/
+
+.toggle-list {
+    margin-bottom: 12px;
+    font-size: 0;
+}
+
+.toggle-list > * {
+    font-size: $FONT_SIZE_SMALL;
+    @include inline-block();
+}
+
+.toggle-list-item > * {
+    padding: 11px 16px 9px 16px;
+    font-weight: bold;
+    color: $GREY_DARK;
+    cursor: pointer;
+}
+
+.toggle-list-item > *:hover {
+    color: $ORANGE_MED_DARK;
+}
+
+.toggle-list-item_isActive > * {
+    position: relative;
+    background: $ORANGE_LIGHT;
+    color: $WHITE;
+    
+    // Ensures that active state has no color change on hover
+    &:hover { color:$WHITE; }
+
+}
+
+.toggle-list-item_isActive > *:after { // This is the down-pointing border triangle arrow.
+    content: "";
+    border-style: solid;
+    border-width: 6px 5px 0 5px;
+    border-color: $ORANGE_LIGHT transparent transparent transparent;
+    width: 0;
+    height: 0;
+    position: absolute;
+    left: 49%; // Only applied in IE8. Modern override below.
+    bottom: -6px;
+
+    // Browserhack: Everything but IE8. Affects modern browsers
+    :root & { left: calc(50% - 6px); } // Providing more precise positioning for the down arrow
+
+}

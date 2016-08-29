@@ -1,0 +1,37 @@
+<!-- #METADATA
+@title Form Item Combo
+@type Form
+@class "formItemCombo"
+@description Provides layout for two form objects to be listed horizontally with a 40/60 split. Extensions are available for width variations.
+@note A use case is to have a checkbox accompany the formItemSet object on the same line, as seen below, but could be used to lay out any two objects in this way.
+-->
+<div class="vr vr_x8" style="max-width: 540px">
+    <!-- Inline style is only for demonstration purposes. It mimics modal environment -->
+    <ul class="formItemCombo">
+        <li>
+            <label class="formItemSet">
+                <div class="formItemSet-hd">
+                    <div class="hdg hdg_3 mix-hdg_darken">
+                        <div>FormItemCombo (default spacing)</div>
+                    </div>
+                </div>
+                <div class="formItemSet-bd">
+                    <select class="input input_select">
+                        <option value="" disabled="" selected="">Select Content Type</option>
+                        <option value="FULL_MEDICAL_CHART">Full Medical Chart</option>
+                        <option value="LAB_RESULT">Lab Result</option>
+                        <option value="OTHER">Other</option>
+                    </select>
+                </div>
+            </label>
+        </li>
+        <li>
+            <label class="checkbox checkbox_narrow mix-checkbox_spacedLeft">
+                <input type="checkbox">
+                <span class="checkbox-text">
+                    <span class="text text_humble">Apply to All</span>
+                </span>
+            </label>
+        </li>
+    </ul>
+</div>

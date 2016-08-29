@@ -1,0 +1,28 @@
+/*--------------------------------------------------- 
+    Cushion:
+
+    This container provides padding...and that's it.
+    Specify ALL padding values for any extensions.
+----------------------------------------------------*/
+$cushion-UNIT: 4px;
+
+.cushion {
+    padding: $cushion-UNIT;
+}
+
+.cushion_topX2 {
+    padding: ($cushion-UNIT * 2) 0 0 0;
+}
+
+.cushion_topX4 {
+    padding: ($cushion-UNIT * 4) 0 0 0;
+}
+
+.cushion_topX5 {
+    padding: ($cushion-UNIT * 5) 0 0 0;
+}
+
+// For even vertical padding (top and bottom);
+.cushion_vertX5 {
+	padding: ($cushion-UNIT * 5) 0 ($cushion-UNIT * 5) 0; 
+}

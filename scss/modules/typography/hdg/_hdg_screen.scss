@@ -1,0 +1,72 @@
+/*--------------------------------------------------- 
+    hdg:
+
+    Styles for headings: A heading receives an extension
+    number in order of it's creation, and the number
+    doesn't refer to increasing or decreasing size.
+---------------------------------------------------*/
+
+.hdg {
+    font-family: $FONT_FAMILY_STD;
+    font-weight: bold;
+    font-size: $DEFAULT_FONT_SIZE;
+}
+
+.hdg_1 {
+    font-size: $FONT_SIZE_MEDIUM_LARGE;
+}
+
+.hdg_2 {
+    font-size: $FONT_SIZE_MEDIUM;
+}
+
+.hdg_3 {
+    font-size: $FONT_SIZE_SMALL_MED;
+}
+
+.hdg_4 {
+    font-size: $FONT_SIZE_LARGE;
+    color: $GREY_DARK;
+}
+
+.hdg_5 {
+    font-size: $FONT_SIZE_MEDIUM;
+    font-weight: normal;
+    color: $GREY_DARK;
+}
+
+.hdg_6 { // Large Uppercase text
+    font-size: $FONT_SIZE_XXXLARGE;
+    text-transform: uppercase;
+    font-weight: lighter;
+    color: $GREY_DARK;
+}
+
+.hdg_7 {
+    font-size: $FONT_SIZE_MEDIUM;
+    font-weight: lighter;
+    color: $GREY_DARK;
+}
+
+.hdg_8 {
+    font-size: $FONT_SIZE_MEDIUM;
+    color: $GREY_DARK;
+}
+
+.hdg_9 {
+    font-size: inherit; /* inherits font size */
+    font-weight: normal;
+    font-style: italic;
+}
+
+.mix-hdg_darken {
+    color: $GREY_DARK;
+}
+
+.mix-hdg_fontWeightSTD {
+    font-weight: normal;
+}
+
+.mix-hdg_fontWeightLT {
+    font-weight: lighter;
+}

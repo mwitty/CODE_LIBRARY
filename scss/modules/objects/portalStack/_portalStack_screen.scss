@@ -1,0 +1,62 @@
+/* ---------------------------------------------------------------------
+ portalStack:
+ 
+ A link containing 3 items stacked vertically (Icon, heading, and button).
+ transition animation to background color on hover.
+
+ EXMPLE MARKUP:
+ <a class="portalStack" href="/hardware">
+     <ul class="portalStack-list">
+         <li class="portalStack-list-icn">
+             <i class="icn icn_display"></i>
+         </li>
+         <li class="portalStack-list-hdg">
+             <h3 class="hdg hdg_md_lg mix-hdg_greyDark">
+                 Hardware
+             </h3>
+         </li>
+         <li class="portalStack-list-cta">
+             <span class="btn btn_accent mix-btn_uppercase"> Go </span>
+         </li>
+     </ul>
+ </a>
+------------------------------------------------------------------------ */
+
+.portalStack {
+	display: block;
+	text-align: center;
+	&:hover { text-decoration: none; }
+
+}
+
+.portalStack-list > * + * {
+	margin-top: 10px;
+}
+
+.portalStack-list-icn > .icn {
+	font-size: $FONT_SIZE_JUMBO;
+	color: $GREY_LIGHTER;
+	transition: color .15s ease-in-out;
+
+	.portalStack:hover &,
+	.portalStack:focus & { color: $GREY_LIGHT; }
+
+}
+
+.portalStack-list-hdg {
+
+	.portalStack & > .hdg {transition: color .15s ease-in-out;}
+	.portalStack:hover & > .hdg,
+	.portalStack:focus & > .hdg { color: $OFFBLACK; }
+
+}
+
+.portalStack-list-cta > .btn {
+	text-transform: uppercase;
+	font-size: $FONT_SIZE_SM;
+	transition: color .15s ease-in-out, background-color .15s ease-in-out;
+
+	.portalStack:hover &,
+	.portalStack:focus &,{ background-color: $TEAL_DARK; }
+
+}

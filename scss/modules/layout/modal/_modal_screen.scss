@@ -1,0 +1,37 @@
+/*--------------------------------------------------- 
+    Modal:
+
+    Provides a centered element with a top margin 
+    and a layout element to insert a closing "x" icon.
+    Parent to other object.
+
+    EXAMPLE MARKUP: 
+
+    <div class="modal">
+        <div class="modal-close">
+            <a href class="u-inheritColor" role="button">
+                <i class="icn icn_x-altx-alt"></i>
+            </a>
+        </div>
+    </div>
+---------------------------------------------------*/
+.modal {
+    position: relative;
+    margin: 100px auto 0 auto;
+    padding: 10px; // This is functioning like margin, since margin: auto; is needed for centering.
+    max-width: 604px;
+}
+
+.modal-close {
+    padding: 7px;
+    position: absolute;
+    right: 13px;
+    top: 13px;
+    cursor: pointer;
+    color: $GREY_DARK_LIGHT;
+    font-size: $FONT_SIZE_MEDIUM_LARGE;
+}
+
+.modal-close > * {
+    cursor: inherit;
+}

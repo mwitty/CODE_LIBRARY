@@ -1,0 +1,36 @@
+<!-- #METADATA
+@title Form Item Set
+@type Form
+@class "formItemSet"
+@description An item to contain a simple head and body section. Intended for controlling the layout of a label and form element.
+@note The label actually wraps the whole object, so clicking any part of formItemSet will focus in on the input, excluding nested select elements.
+-->
+<div class="vr vr_x4">
+    <label class="formItemSet">
+        <div class="formItemSet-hd">
+            <div class="hdg hdg_3 mix-hdg_darken">
+                <div>Label Text</div>
+            </div>
+        </div>
+        <div class="formItemSet-bd">
+            <select class="input input_select">
+                <option value="" disabled="" selected="">Body for select element</option>
+                <option value="FULL_MEDICAL_CHART">Full Medical Chart</option>
+                <option value="LAB_RESULT">Lab Result</option>
+                <option value="OTHER">Other</option>
+            </select>
+        </div>
+    </label>
+</div>
+<div class="vr vr_x4">
+    <label class="formItemSet">
+        <div class="formItemSet-hd">
+            <div class="hdg hdg_3 mix-hdg_darken">
+                <div>Label Text</div>
+            </div>
+        </div>
+        <div class="formItemSet-bd">
+            <input placeholder="Body for a text input" class="input input_text" type="text" />
+        </div>
+    </label>
+</div>

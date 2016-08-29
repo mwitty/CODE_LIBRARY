@@ -1,0 +1,42 @@
+/*--------------------------------------------------- 
+    BodyCopy:
+
+    This object functions more or less like a 
+    "user-content" or "wysiwyg" class, allowing bare
+    elements to have a basic spacing and styling.
+---------------------------------------------------*/
+
+.bodyCopy {
+    
+    > h1 + * { margin-top: 20px; } // Spacing from main header
+
+    > * + * { margin-top: 15px; } // Spacing between elements
+
+    a { 
+        text-decoration: underline;
+        color: $ORANGE;
+
+        // Active style on click
+        &:active { color: $ORANGE_DARK;}
+        
+    }
+
+    strong { font-weight: bold; }
+
+    h1, h2, h3, h4 { font-weight: bold; }
+
+    h1 { font-size: $FONT_SIZE_LARGE; }
+
+    h2 { font-size: $FONT_SIZE_MEDIUM_XLARGE; }
+
+    h3 { font-size: $FONT_SIZE_MEDIUM; }
+
+    p { font-size: $DEFAULT_FONT_SIZE; }
+
+    ul { padding-left: 18px; }
+
+    li { list-style-type: disc; }
+
+    li + li { margin-top: 10px; }
+
+}

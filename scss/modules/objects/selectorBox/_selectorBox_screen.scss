@@ -1,0 +1,120 @@
+/*--------------------------------------------------- 
+    selectorBox:
+
+    Functions similarly to a select element, but looks
+    like...
+    -----------SAMPLE MARKUP----------
+
+    <div class="selectorBox">
+        <div class="selectorBox-hd">
+            heading copy <span class="selectorBox-hd-icn"></span>
+        </div>
+        <div class="selectorBox-bd">
+            <ul class="selectorBox-bd-list">
+                <li>option</li>
+                <li>option</li>
+                <li>option</li>
+            </ul>
+        </div>
+    </div>
+
+    ---------------------------------
+
+---------------------------------------------------*/
+
+//variables
+$selectorBox-WIDTH: 240px;
+$selectorBox-BODY_MAX_HEIGHT: 275px;
+
+.selectorBox {
+    position: relative;
+}
+
+.selectorBox-hd {
+    display: block;
+    padding: 6px 30px 6px 6px;
+    width: $selectorBox-WIDTH;
+    height: 33px; // Height is necessary for text overflow to work on .selectorBox-hd-- it requires display block making it taller if height isn't set here
+    border: 1px solid $GREY_LIGHT;
+    position: relative;
+    @include border-radius(2px);
+    @include box-sizing(border-box);
+    @include box-shadow(0px 2px 1px -1px $GREY_LIGHT);
+    cursor: pointer;
+    vertical-align: middle;
+    background: $NEARWHITE;
+    font-size: $FONT_SIZE_MEDIUM;
+    color: inherit;
+    @include stop-text-select(none); // Stops distracting accidental text highlighting.
+}
+
+.selectorBox-hd > * { // Assumes an inner inline element that needs it's text overflow controlled
+    display: block;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.selectorBox-hd-icn {
+    margin-left: 4px;
+    background: $GREY_LIGHTEST;
+    position: absolute;
+    right: 7px;
+    top: 6px;
+    @include inline-block();
+    @include border-radius(2px);
+}
+
+.selectorBox-hd:hover > .selectorBox-hd-icn,
+.selectorBox-hd:focus > .selectorBox-hd-icn,
+.selectorBox_isActive .selectorBox-hd-icn {
+    background: $ORANGE; // targeting backdrop behind the icon.
+    & > .icn { color: $WHITE; } // targeting icon color
+}
+
+.selectorBox-hd:active > .selectorBox-hd-icn {
+    background: $ORANGE_DARK;
+}
+
+.selectorBox-hd-icn > .icn {
+    color: $ORANGE_MED_DARK;
+    padding: 0 4px;
+    vertical-align: text-bottom;
+}
+
+.selectorBox-bd { // Hidden by default.
+    width: 1px;
+    height: 1px;
+    margin-top: -1px;
+    overflow: hidden;
+    position: absolute;
+}
+
+.selectorBox_isActive .selectorBox-bd {
+    border: 1px solid $GREY_LIGHT;
+    margin-top: -1px;
+    @include border-radius(2px);
+    width: $selectorBox-WIDTH;
+    height: auto;
+    max-height: $selectorBox-BODY_MAX_HEIGHT;
+    overflow-y: auto;
+    position: absolute;
+    @include box-shadow(0px 2px 1px -1px $GREY_LIGHT);
+    @include box-sizing(border-box);
+    background: $WHITE;
+    z-index: 100;
+    left: 0;
+}
+
+.selectorBox-bd-list > * > * {
+    display: block; // Ensuring inline elements get block styling.
+    padding: 10px 15px;
+    font-size: $FONT_SIZE_MEDIUM;
+    color: inherit;
+    cursor: pointer;
+}
+
+.selectorBox-bd-list > *:hover {
+    background: $OFFWHITE_ORANGE_TINT_LIGHT;
+    color: $ORANGE_MED_DARK;
+}

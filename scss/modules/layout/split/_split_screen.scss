@@ -1,0 +1,25 @@
+/*--------------------------------------------------- 
+    Split:
+
+    A layout object that provides floating for items.
+    The parent provides block formatting context with 
+    a micro-clearfix and the children get floated.
+---------------------------------------------------*/
+
+.split {
+    @include micro-clearfix();
+    margin: -10px 0 0 -10px; // Adding default minimum spacing
+}
+
+.split > * {
+    padding: 10px 0 0 10px; // Adding default minimum spacing
+    @include box-sizing(border-box);
+}
+
+.split-left {
+    float: left;
+}
+
+.split-right {
+    float: right;
+}

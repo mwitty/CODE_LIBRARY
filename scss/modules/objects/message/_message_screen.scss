@@ -1,0 +1,35 @@
+/*----------------------------------------------------- 
+    Message:
+
+    Provides layout and colors for user messages.
+-----------------------------------------------------*/
+
+.message {
+    padding: 14px 14px 17px;
+    font-size: 0;
+}
+
+.message > * {
+    @include inline-block();
+    font-size: $DEFAULT_FONT_SIZE;
+    vertical-align: middle;
+}
+
+.message > .message-icon {
+    margin-right: 14px;
+}
+
+.message_success {
+    color: $GREEN;
+    background: $GREEN_LIGHT;
+}
+
+.message_error {
+    color: $PINK;
+    background: $PINK_LIGHT;
+}
+
+.message-icon {
+    font-size: 36px;
+    line-height: 1;
+}
