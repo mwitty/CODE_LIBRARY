@@ -1,28 +1,40 @@
-/*--------------------------------------------------- 
-    Constrain:
-
-    Provides a constraining max width on your objects
-    and centers them.
----------------------------------------------------*/
+/* ---------------------------------------------------------------------
+ Constrain:
+ This object constrains content and optionally centers it with extensions.
+ Extensions are also used for applying different max-widths.
+------------------------------------------------------------------------ */
+$constrain-SPACING_UNIT: 50px;
 
 .constrain {
-    @include constrain-main-width(); // includes --> max-width: 1024px; padding: 0 10px; margin: 0 auto;.
+	max-width: $SITE_MAX_WIDTH;
 }
 
-.constrain_sm {
-	max-width: 330px;
+.constrain_x5 {
+	max-width: $constrain-SPACING_UNIT * 5;
 }
 
-.constrain_md {
-    max-width: 438px;
+.constrain_x10 {
+	max-width: $constrain-SPACING_UNIT * 10;
 }
 
-.constrain_mdLg {
-    max-width: 475px;
+.constrain_x12 {
+	max-width: $constrain-SPACING_UNIT * 12;
 }
 
-// Add this mixin class when you only want to use the max-width and not padding or margin from contrain-main-width() mixin.
-.mix-constrain_natural {
-    padding: 0; // Resets these values from the mixin.
-    margin: 0; // Resets these values from the mixin.
+.constrain_x15 {
+	max-width: $constrain-SPACING_UNIT * 15;
+}
+
+.constrain_x18 {
+	max-width: $constrain-SPACING_UNIT * 18;
+}
+
+.constrain_x19 {
+	max-width: $constrain-SPACING_UNIT * 19;
+}
+
+.mix-constrain_page {
+	margin: 0 auto;
+	padding-left: 10px;
+	padding-right: 10px;
 }

@@ -5,14 +5,13 @@
 ---------------------------------------------------*/
 
 .btn {
-    @include inline-block();
+    display: inline-block;
     border: 0;
     padding: 10px 18px; 
     text-align: center;
     font-size: $FONT_SIZE_SMALL;
     cursor: pointer;
-    @include border-radius(2px);
-    @include appearance(none);
+    border-radius: 2px;
 }
 
 .btn_accent {
@@ -94,13 +93,6 @@
     min-width: 90px;
 }
 
-.mix-btn_fauxBrowseBtn {
-    pointer-events: none;
-    position: absolute;
-    left: 2px;
-    top: 2px;
-}
-
-.mix-btn_expand {
+.mix-btn_spanFull {
     width: 100%; // When width is controlled by parent layout container.
 }

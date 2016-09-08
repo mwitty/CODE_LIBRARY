@@ -5,10 +5,18 @@ Utility classes have the "u-" in all cases and aim to only
 deal with one property.
 -------------------------------------------------------*/
 
-.u-isHidden { display: none !important; }
+.u-isHidden { display: none; }
 
 .u-alignRight { text-align: right; }
 
 .u-inheritColor { color: inherit; }
 
 .u-position { position: relative; }
+
+.u-block { display: block; }
+
+.u-alignRight { text-align: right; }
+
+.u-alignCenter { text-align: center; }
+
+.u-alignLeft { text-align: left; }
